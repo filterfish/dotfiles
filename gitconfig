@@ -1,0 +1,15 @@
+[user]
+  name = Richard Heycock
+  email = rgh@roughage.com.au
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = auto
+
+[alias]
+  stat = status
+  root = !pwd
+  flog = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  slog = log --pretty=oneline
