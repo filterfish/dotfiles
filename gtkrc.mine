@@ -1,0 +1,18 @@
+include "/usr/share/themes/ClearlooksClassic/gtk-2.0/gtkrc"
+
+gtk-toolbar-style = GTK_TOOLBAR_ICONS 
+
+gtk-key-theme-name = "Emacs"
+
+# The following code replaces: 'gtk-key-theme-name = "Emacs"' which doesn't work
+binding "gtk-emacs-text-entry" {
+  bind "<ctrl>k" { "delete-from-cursor" (paragraph-ends, 1) }
+  bind "<ctrl>u" {
+    "move-cursor" (paragraph-ends, -1, 0)
+    "delete-from-cursor" (paragraph-ends, 1)
+  }
+  bind "<ctrl>h" { "delete-from-cursor" (chars, -1) }
+  bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) }
+}
+
+class "GtkEntry" binding "gtk-emacs-text-entry"
