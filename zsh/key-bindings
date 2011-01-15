@@ -1,0 +1,18 @@
+bindkey -M vicmd "/"  vi-history-search-backward
+bindkey -M vicmd "^t" transpose-chars
+bindkey -M viins "^t" transpose-chars
+
+bindkey -M vicmd "u"  undo
+
+bindkey -M viins "^u" backward-kill-line
+bindkey -M viins "^w" backward-kill-word
+bindkey -M viins "^h" backward-delete-char
+bindkey -M viins "^?" backward-delete-char
+
+bindkey -M viins "^q" push-line
+bindkey -M vicmd "^q" push-line
+
+bindkey -M viins "^l" clear-screen
+bindkey -M viins '^i' expand-or-complete-prefix
+
+#vim:ft=zsh

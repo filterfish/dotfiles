@@ -1,0 +1,16 @@
+bindkey -M vicmd "n" vi-down-line-or-history
+bindkey -M vicmd "e" vi-up-line-or-history
+bindkey -M vicmd "s" vi-backward-char
+bindkey -M vicmd "t" vi-forward-char
+
+bindkey -M vicmd "f" vi-forward-word-end
+bindkey -M vicmd "F" vi-forward-blank-word-end
+bindkey -M vicmd "h" vi-substitute
+bindkey -M vicmd "k" vi-repeat-search
+bindkey -M vicmd "K" vi-rev-repeat-search
+
+export INPUTRC=$HOME/.inputrc
+export LESSKEY=$HOME/.less
+export VIMINIT="source $HOME/.vimrc"
+
+#vim:ft=zsh

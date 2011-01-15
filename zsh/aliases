@@ -1,0 +1,3 @@
+alias ls='ls -F'
+alias w3m='=w3m -no-mouse'
+alias agrep=tre-agrep

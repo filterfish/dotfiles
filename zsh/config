@@ -1,0 +1,63 @@
+# Make sure the path is clean
+PATH=$HOME/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
+
+HISTFILE=~/.histfile
+HISTSIZE=2048
+SAVEHIST=2048
+
+setopt nocheckjobs
+
+setopt pushd_ignore_dups
+
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt inc_append_history
+setopt extended_history
+setopt list_types
+
+setopt complete_in_word
+
+setopt interactive_comments
+setopt nohup
+
+setopt nobeep
+setopt extended_glob
+setopt multios
+
+# Sort ssh keys out
+keychain --nogui  --quiet id_rsa
+. ~/.keychain/$HOST-sh
+
+
+# This sould speed up iceweasel
+export MOZ_DISABLE_PANGO=1
+
+
+# Add the following to /etc/sudoers and you get
+# # proper bindings as root as well.
+
+export INPUTRC=$HOME/.inputrc
+export LESSKEY=$HOME/.less
+export VIMINIT="source $HOME/.vimrc"
+
+# collation = A-Za-z
+export LC_COLLATE=C
+
+TMP=/tmp
+
+alias ls='ls -F'
+
+EDITOR=vi
+FIGNORE=".git"
+HISTIGNORE="ls:b[fg]:vi:cd"
+export EDITOR
+
+# Give bc sesible defaults
+export BC_ENV_ARGS="-l -q"
+
+[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+
+#vim:ft=zsh

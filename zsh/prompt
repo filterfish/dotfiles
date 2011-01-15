@@ -1,0 +1,37 @@
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+function title {
+  if [[ $TERM == "screen" ]]; then
+    print -Pn "\033k\033\134\033k$1\033\134"
+  elif [[ $TERM == "xterm" ]]; then
+    print -Pn "\e]0;%n@%m: $*\a"
+  fi
+}
+
+alias lrvm='eval $($HOME/bin/lrvm)'
+ruby_version=$(ruby -v | awk '{print $2}')
+
+autoload -U compinit
+compinit
+
+setopt prompt_subst
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' formats ' [%b]'
+zstyle ':vcs_info:*' actionformats ' [%b|%F{1}%a%f]'
+zstyle ':vcs_info:*' enable git
+
+zle_highlight=(none)
+
+function precmd { title "$(basename $PWD)" }
+function precmd {
+  vcs_info
+  PATH=$(cat $HOME/.lrvm):$PATH
+  ruby_version=$(ruby -v | awk '{print $2}')
+  title "$(basename $PWD)"
+}
+
+PROMPT='%m:%/-{${ruby_version}}${vcs_info_msg_0_} '
+
+#vim:ft=zsh
