@@ -1,0 +1,6 @@
+# See http://www.webupd8.org/2010/11/alternative-to-200-lines-kernel-patch.html for details
+
+if false; then
+  mkdir -m 0700 /cgroup/user/$$
+  echo $$ > /cgroup/user/$$/tasks
+fi
