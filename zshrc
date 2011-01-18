@@ -12,7 +12,7 @@ if [ "$PS1" ] ; then
   source_if_exists $dotfiles/zsh/ruby
   source_if_exists $dotfiles/zsh/java
   source_if_exists $dotfiles/zsh/cgroup
-  source_if_exists $dotfiles/zsh/$(short_hostname)
+  source_if_exists $dotfiles/zsh/config.$(short_hostname)
 
   source_if_exists $private_dotfiles/ec2
 
