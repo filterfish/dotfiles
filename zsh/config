@@ -27,10 +27,12 @@ setopt nobeep
 setopt extended_glob
 setopt multios
 
-# Sort ssh keys out
-keychain --nogui  --quiet id_rsa
-. ~/.keychain/$HOST-sh
 
+if [ -f =keychain ]; then
+  # Sort ssh keys out
+  keychain --nogui  --quiet id_rsa
+  . ~/.keychain/$HOST-sh
+fi
 
 # This sould speed up iceweasel
 export MOZ_DISABLE_PANGO=1
