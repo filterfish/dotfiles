@@ -27,11 +27,15 @@ zle_highlight=(none)
 function precmd { title "$(basename $PWD)" }
 function precmd {
   vcs_info
-  PATH=$(cat $HOME/.lrvm):$PATH
-  ruby_version=$(ruby -v | awk '{print $2}')
+  if [ -f $HOME/.lrvm ]; then
+    PATH=$(cat $HOME/.lrvm):$PATH
+    ruby_version="-{$(ruby -v | awk '{print $2}')}"
+  else
+    ruby_version=''
+  fi
   title "$(basename $PWD)"
 }
 
-PROMPT='%m:%/-{${ruby_version}}${vcs_info_msg_0_} '
+PROMPT='%m:%/${ruby_version}${vcs_info_msg_0_} '
 
 #vim:ft=zsh
