@@ -36,7 +36,7 @@ export MOZ_DISABLE_PANGO=1
 
 export INPUTRC=$HOME/.inputrc
 export LESSKEY=$HOME/.less
-expost SCREENRC=$HOME/.screenrc
+export SCREENRC=$HOME/.screenrc
 export VIMINIT="source $HOME/.vimrc"
 
 # collation = A-Za-z
