@@ -1,0 +1,20 @@
+bind 'n' next
+bind 'e' prev
+
+# Change the history movement keys to Colemak
+markkeys "h=s:l=t:j=n:k=e"
+
+autodetach on
+
+defscrollback 2048
+
+# Always use a login shell.
+shell -$SHELL
+
+startup_message off
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+defc1 off
+defutf8 on
