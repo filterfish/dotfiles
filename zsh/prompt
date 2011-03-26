@@ -29,13 +29,13 @@ function precmd {
   vcs_info
   if [ -f $HOME/.lrvm ]; then
     PATH=$(cat $HOME/.lrvm):$PATH
-    ruby_version="-{$(ruby -v | awk '{print $2}')}"
+    ruby_version=" {$(ruby -v | awk '{print $2}')}"
   else
     ruby_version=''
   fi
   title "$(basename $PWD)"
 }
 
-PROMPT='%m:%/${ruby_version}${vcs_info_msg_0_} '
+PROMPT=$'%m:%/\e[0;37m${ruby_version}\e[0;36m${vcs_info_msg_0_}\e[0m '
 
 #vim:ft=zsh
