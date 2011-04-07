@@ -1,6 +1,3 @@
-# Make sure the path is clean
-PATH=$HOME/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
-
 HISTFILE=~/.histfile
 HISTSIZE=2048
 SAVEHIST=2048
@@ -17,6 +14,7 @@ setopt hist_save_no_dups
 setopt inc_append_history
 setopt extended_history
 setopt list_types
+setopt no_bang_hist
 
 setopt complete_in_word
 
@@ -26,6 +24,10 @@ setopt nohup
 setopt nobeep
 setopt extended_glob
 setopt multios
+
+# Make sure the path is clean
+PATH=$HOME/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
+MANPATH=/usr/share/man
 
 # This sould speed up iceweasel
 export MOZ_DISABLE_PANGO=1
