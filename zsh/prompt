@@ -25,12 +25,8 @@ zle_highlight=(none)
 
 function precmd {
   vcs_info
-  if [ -f $HOME/.lrvm ]; then
-    PATH=$(cat $HOME/.lrvm):$PATH
-    ruby_version=" {$(ruby -v | awk '{print $2}')}"
-  else
-    ruby_version=''
-  fi
+  [ -f $HOME/.lrvm ] && PATH=$(cat $HOME/.lrvm):$PATH
+  ruby_version=" {$(ruby -v | awk '{print $2}')}"
   title "$(basename $PWD)"
 }
 
