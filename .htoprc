@@ -1,13 +1,14 @@
 # Beware! This file is rewritten every time htop exits.
 # The parser is also very primitive, and not human-friendly.
 # (I know, it's in the todo list).
-fields=37 0 48 17 18 64 38 39 40 2 46 47 49 1 
-sort_key=64
+fields=37 0 48 17 64 62 63 38 39 40 2 46 47 49 1 
+sort_key=46
 sort_direction=1
 hide_threads=1
 hide_kernel_threads=1
 hide_userland_threads=1
 shadow_other_users=0
+show_thread_names=0
 highlight_base_name=0
 highlight_megabytes=1
 highlight_threads=0
