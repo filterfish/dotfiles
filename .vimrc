@@ -15,6 +15,9 @@ noremap K N|noremap <C-w>K <C-w>N
 noremap j f|noremap <C-w>j <C-w>f
 "noremap J F|noremap <C-w>J <C-w>F
 
+" set the various plugin paths
+set runtimepath+=~/.vim/vimwiki
+
 syntax enable
 filetype plugin on
 filetype indent on
