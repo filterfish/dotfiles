@@ -104,3 +104,6 @@ if has("gui_running")
 
   colorscheme slate
 endif
+
+let g:vimwiki_list = [{'path': '~/.vimwiki/', 'path_html': '~/vimwiki_html/'}]
+
