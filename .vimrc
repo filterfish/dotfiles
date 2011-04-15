@@ -50,6 +50,13 @@ set tags=/home/rgh/dev/rails/pn/tags
 filetype on  " Automatically detect file types.
 "set nocompatible  " We don't want vi compatibility.
 
+if $USER != 'root'
+  set modeline
+else
+  set nomodeline
+endif
+
+
 set pastetoggle=<c-v>
 
 set viminfo^=!
