@@ -17,6 +17,7 @@ noremap j f|noremap <C-w>j <C-w>f
 
 " set the various plugin paths
 set runtimepath+=~/.vim/vimwiki
+set runtimepath+=~/.vim/puppet
 
 syntax enable
 filetype plugin on
