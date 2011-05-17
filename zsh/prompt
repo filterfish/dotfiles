@@ -1,6 +1,3 @@
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-
 function title {
   if [[ $TERM == "screen" ]]; then
     print -Pn "\033k\033\134\033k$1\033\134"
@@ -10,9 +7,6 @@ function title {
 }
 
 alias lrvm='eval $($HOME/bin/lrvm)'
-
-autoload -U compinit
-compinit
 
 setopt prompt_subst
 autoload -Uz vcs_info

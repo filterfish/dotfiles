@@ -1,0 +1,4 @@
+#compdef cdr
+
+_description files expl 'dev repos'
+_files -W ~/dev/rails -/ && return

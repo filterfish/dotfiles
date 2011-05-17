@@ -1,6 +1,9 @@
 function source_if_exists { [ -f $1 ] && source $1 }
 function short_hostname { hostname -s }
 
+function cdr { cd ~/dev/rails/$1 }
+function cdg { cd $(gem env | grep 'INSTALLATION DIRECTORY' | awk '{print $4}')/gems/$1 }
+
 function cr { cd $(gr) }
 function gr { echo $(dirname $(git rev-parse --git-dir 2> /dev/null || echo ".")) }
 
@@ -10,15 +13,12 @@ function dict  { \dictl "$@" 2>&1 | colorit | less -R }
 function st { cd $HOME/dev/rails/pn/$1 }
 function sm { cd $HOME/dev/ruby/smith/$1 }
 
-function cwd { echo $(pwd)/$1 }
 function env { /usr/bin/env | sort }
 function setTitle { echo -n "]2;$1^G" }
 
 function today { date +%Y%m%d }
 function now { date $1 +%Y%m%dT%H%M%S }
 
-function cgp { cd $(dirname $(gem which $1)) }
-function irb { $(whence -p irb) -r irb/completion }
 function gemdoc {
   gem_dir=`gem env gemdir`
   gnome-www-browser $gem_dir/doc/`$(which ls) $gem_dir/doc | grep $1 | sort | tail -1`/rdoc/index.html

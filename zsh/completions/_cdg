@@ -1,0 +1,4 @@
+#compdef cdg
+
+_description files expl 'gem installation dir'
+_files -W $(gem env | grep 'INSTALLATION DIRECTORY' | awk '{print $4}')/gems -/ && return
