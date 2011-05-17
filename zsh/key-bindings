@@ -1,3 +1,7 @@
+reload-history() { fc -RI }
+
+zle -N reload-history
+
 bindkey -M vicmd "/"  vi-history-search-backward
 bindkey -M vicmd "^t" transpose-chars
 bindkey -M viins "^t" transpose-chars
@@ -11,6 +15,8 @@ bindkey -M viins "^?" backward-delete-char
 
 bindkey -M viins "^q" push-line
 bindkey -M vicmd "^q" push-line
+
+bindkey -M vicmd "^r" reload-history
 
 bindkey -M viins "^l" clear-screen
 bindkey -M viins '^i' expand-or-complete-prefix
