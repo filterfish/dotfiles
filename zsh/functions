@@ -20,8 +20,9 @@ function today { date +%Y%m%d }
 function now { date $1 +%Y%m%dT%H%M%S }
 
 function gemdoc {
+  [ -z $1 ] && { echo "Please supply a gem"; return; }
   gem_dir=`gem env gemdir`
-  gnome-www-browser $gem_dir/doc/`$(which ls) $gem_dir/doc | grep $1 | sort | tail -1`/rdoc/index.html
+  luakit $gem_dir/doc/`$(whence ls) $gem_dir/doc | grep $1 | sort | tail -1`/rdoc/index.html
 }
 
 function urlencode { echo $1 | perl -MURI::Escape -lne 'print uri_escape($_)' }
