@@ -1,1 +1,2 @@
 export RAILS_ENV=production
+PATH=/usr/local/ruby-1.9.2-p180/bin:$PATH
