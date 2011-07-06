@@ -1,0 +1,4 @@
+#compdef cr
+
+_description files expl 'git root'
+_files -W $(gr)/ -/ && return
