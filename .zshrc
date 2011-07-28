@@ -4,6 +4,7 @@ if [ "$PS1" ] ; then
 
   source $dotfiles/zsh/functions
 
+  source_if_exists $dotfiles/zsh/term
   source_if_exists $dotfiles/zsh/config
   source_if_exists $dotfiles/zsh/completion
   source_if_exists $dotfiles/zsh/vi-bindings

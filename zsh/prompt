@@ -1,9 +1,12 @@
 function title {
-  if [[ $TERM == "screen" ]]; then
-    print -Pn "\033k\033\134\033k$1\033\134"
-  elif [[ $TERM == "xterm" ]]; then
-    print -Pn "\e]0;%n@%m: $*\a"
-  fi
+  case "$TERM" in
+    screen*)
+      print -Pn "\033k\033\134\033k$1\033\134"
+      ;;
+    xterm*)
+      print -Pn "\e]0;%n@%m: $*\a"
+      ;;
+  esac
 }
 
 alias lrvm='eval $($HOME/bin/lrvm)'

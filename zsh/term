@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+case "$TERM" in
+  xterm)
+    if [ -z "$XTERM_VERSION" ] ; then
+      echo "Warning: Terminal wrongly calling itself 'xterm'."
+    else
+      case "$XTERM_VERSION" in
+        "XTerm(270)") TERM=xterm-256color ;;
+        "XTerm") ;;
+        *) echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION" ;;
+      esac
+    fi
+    ;;
+  screen)
+    TERM=screen-256color
+    ;;
+esac

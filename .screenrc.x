@@ -6,17 +6,27 @@ markkeys "h=s:l=t:j=n:k=e"
 
 autodetach on
 
+defscrollback 2048
+
+# Always use a login shell.
 shell -$SHELL
 
-defscrollback 2048
-# use xterm's scrollback buffer
-#
-termcapinfo xterm|xterms|xs|rxvt ti@:te@
+startup_message off
+
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
 defc1 off
 defutf8 on
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# use xterm's scrollback buffer
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
 
 ################
 #
