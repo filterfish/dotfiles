@@ -44,8 +44,6 @@ runtime macros/matchit.vim
 let g:allml_global_maps = 1
 let loaded_matchparen = 1
 
-set tags=/home/rgh/dev/rails/pn/tags
-
 " rails stuff.
 filetype on  " Automatically detect file types.
 "set nocompatible  " We don't want vi compatibility.
@@ -56,6 +54,7 @@ else
   set nomodeline
 endif
 
+set tags=tags;
 
 set pastetoggle=<c-v>
 
@@ -63,6 +62,9 @@ set viminfo^=!
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 
 set autoindent
+
+" For vim/ctags to recognise methods with a ?
+set iskeyword+=?
 
 " Visual
 set novisualbell  " No blinking .
