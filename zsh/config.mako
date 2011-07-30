@@ -10,6 +10,9 @@ export XDG_DATA_HOME XDG_CACHE_HOME XDG_CONFIG_HOME
 
 # Let remote systems know what keyboard layout is being used.
 # # Make sure sshd_config contains 'AcceptEnv KBD_LAYOUT'
-export KBD_LAYOUT=colemak
+KBD_LAYOUT=colemak
 
+PULSE_SERVER=localhost
+
+export KBD_LAYOUT PULSE_SERVER
 #vim:ft=zsh
