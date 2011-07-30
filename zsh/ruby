@@ -9,3 +9,5 @@ GEM_PRIVATE_KEY=$HOME/.gem/gem-private_key.pem
 GEM_CERTIFICATE_CHAIN=$HOME/.gem/gem-public_key.pem
 
 export RUBYOPT GEM_PRIVATE_KEY GEM_CERTIFICATE_CHAIN
+
+# vim:ft=zsh

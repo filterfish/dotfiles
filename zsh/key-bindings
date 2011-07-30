@@ -21,4 +21,4 @@ bindkey -M vicmd "^r" reload-history
 bindkey -M viins "^l" clear-screen
 bindkey -M viins '^i' expand-or-complete-prefix
 
-#vim:ft=zsh
+# vim:ft=zsh

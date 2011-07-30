@@ -29,4 +29,4 @@ function gemdoc {
 function urlencode { echo $1 | perl -MURI::Escape -lne 'print uri_escape($_)' }
 function urldecode { echo $1 | perl -MURI::Escape -lne 'print uri_unescape($_)' }
 
-#vim:ft=zsh
+# vim:ft=zsh

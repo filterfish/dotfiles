@@ -4,3 +4,5 @@ if false; then
   mkdir -m 0700 /cgroup/user/$$
   echo $$ > /cgroup/user/$$/tasks
 fi
+
+# vim:ft=zsh

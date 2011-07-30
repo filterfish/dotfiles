@@ -15,4 +15,5 @@ KBD_LAYOUT=colemak
 PULSE_SERVER=localhost
 
 export KBD_LAYOUT PULSE_SERVER
-#vim:ft=zsh
+
+# vim:ft=zsh

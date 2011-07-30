@@ -13,4 +13,4 @@ export INPUTRC=$HOME/.inputrc
 export LESSKEY=$HOME/.less
 export VIMINIT="source $HOME/.vimrc"
 
-#vim:ft=zsh
+# vim:ft=zsh

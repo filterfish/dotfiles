@@ -29,4 +29,4 @@ function precmd {
 
 PROMPT=$'%m:%/%{\e[0;37m%}${ruby_version}%{\e[0;36m%}${vcs_info_msg_0_}%{\e[0m%} '
 
-#vim:ft=zsh
+# vim:ft=zsh
