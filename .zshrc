@@ -6,7 +6,6 @@ if [ "$PS1" ] ; then
 
   source_if_exists $dotfiles/zsh/term
   source_if_exists $dotfiles/zsh/config
-  source_if_exists $dotfiles/zsh/completion
   source_if_exists $dotfiles/zsh/vi-bindings
   source_if_exists $dotfiles/zsh/key-bindings
   source_if_exists $dotfiles/zsh/prompt
@@ -14,6 +13,7 @@ if [ "$PS1" ] ; then
   source_if_exists $dotfiles/zsh/ruby
   source_if_exists $dotfiles/zsh/java
   source_if_exists $dotfiles/zsh/cgroup
+  source_if_exists $dotfiles/zsh/completion
   source_if_exists $dotfiles/zsh/config.$(short_hostname)
 
   source_if_exists $private_dotfiles/ec2

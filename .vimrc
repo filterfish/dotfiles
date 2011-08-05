@@ -16,8 +16,9 @@ noremap j f|noremap <C-w>j <C-w>f
 "noremap J F|noremap <C-w>J <C-w>F
 
 " set the various plugin paths
-set runtimepath+=~/.vim/vimwiki
-set runtimepath+=~/.vim/puppet
+set runtimepath+=/home/rgh/.vim/vimwiki
+set runtimepath+=/home/rgh/.vim/puppet
+set runtimepath+=/home/rgh/.vim/solarized
 
 syntax enable
 filetype plugin on
@@ -37,6 +38,16 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
+let g:solarized_termcolors=256
+let g:solarized_bold=0
+let g:solarized_underline=0
+let g:solarized_termtrans=1
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+
 runtime macros/matchit.vim
 
 :nohlsearch
@@ -46,6 +57,7 @@ let loaded_matchparen = 1
 
 " rails stuff.
 filetype on  " Automatically detect file types.
+
 "set nocompatible  " We don't want vi compatibility.
 
 if $USER != 'root'
@@ -85,7 +97,7 @@ set wildmode=list:longest
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Set the title in screen.
-if $TERM=='screen'
+if $TERM=='screen' || $TERM=='screen-256color'
     exe "set title titlestring=%f"
     exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
 endif
@@ -108,4 +120,3 @@ if has("gui_running")
 endif
 
 let g:vimwiki_list = [{'path': '~/.vimwiki/', 'path_html': '~/vimwiki_html/'}]
-
