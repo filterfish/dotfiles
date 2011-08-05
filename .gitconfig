@@ -10,6 +10,8 @@
 
 [alias]
   stat = status
+  c    = commit
+  co   = checkout
   root = !pwd
   flog = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   slog = log --pretty=oneline
