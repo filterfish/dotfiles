@@ -1,4 +1,4 @@
-reload-history() { fc -RI }
+reload-history() { fc -R; zle accept-line }
 
 zle -N reload-history
 
