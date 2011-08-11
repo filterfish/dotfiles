@@ -1,9 +1,6 @@
-KEYTIMEOUT=0
+KEYTIMEOUT=1
 
 bindkey -rpM viins '\e'
-bindkey -rpM vicmd '\e'
-
-bindkey -v
 
 function zle-line-init { zle -K vicmd; }
 zle -N zle-line-init
