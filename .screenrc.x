@@ -25,9 +25,6 @@ attrcolor b ".I"
 # tell screen how to set colors. AB = background, AF=foreground
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 
-# use xterm's scrollback buffer
-termcapinfo xterm*|xterms|xs|rxvt ti@:te@
-
 ################
 # xterm tweaks
 ################
@@ -53,3 +50,6 @@ termcapinfo xterm* 'kh=\EOH:kI=\E[2~:kD=\E[3~:kH=\EOF:kP=\E[5~:kN=\E[6~'
 
 # emulate part of the 'K' charset
 termcapinfo xterm* 'XC=K%,%\E(B,[\304,\\\\\326,]\334,{\344,|\366,}\374,~\337'
+
+# use xterm's scrollback buffer
+termcapinfo xterm*|xterms|xs|rxvt ti@:te@
