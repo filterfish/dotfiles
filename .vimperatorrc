@@ -1,0 +1,57 @@
+"set editor='uxterm -e vim'
+set editor='gvim -f'
+
+set defsearch='duckduckgo'
+set complete='l'
+set showstatuslinks=2
+
+set tabnumbers
+set animations
+set noscrollbars
+
+noremap <C-p> <none>
+noremap <C-n> <none>
+noremap <C-o> <none>
+noremap <C-i> <none>
+
+"up/down on the page
+noremap n j
+noremap e k
+
+"left/right on the page
+noremap s h
+noremap t l
+
+"forward & backward in the history stack
+noremap S H
+noremap T L
+
+"create new tabs
+noremap h t
+noremap H T
+
+"cycle througth tabs
+noremap E gT
+noremap N gt
+
+"re-search
+noremap K N
+noremap k n
+
+command! fb emenu Tools.Firebug.Open Firebug
+command! vs viewsource
+
+command! google open http://www.google.com <args>
+command! wiki open http://wikipedia.org <args>
+command! red open http://www.redditall.com
+command! Red tabopen http://www.redditall.com
+command! pm open http://pm.directednews.com
+command! Pm tabopen http://pm.directednews.com
+command! tw open http://twitter.com
+command! Tw tabopen http://twitter.com
+command! prod open http://topikality.com
+command! Prod tabopen http://topikality.com
+command! dev open http://localhost:3000
+command! Dev tabopen http://localhost:3000
+command! gems open /usr/local/ruby-1.9.2-p136/lib/ruby/gems/1.9.1/doc
+command! gems18 open file:///usr/lib/ruby/gems/1.8/doc
