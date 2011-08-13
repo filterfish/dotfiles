@@ -19,6 +19,7 @@ noremap j f|noremap <C-w>j <C-w>f
 set runtimepath+=/home/rgh/.vim/vimwiki
 set runtimepath+=/home/rgh/.vim/puppet
 set runtimepath+=/home/rgh/.vim/solarized
+set runtimepath+=/home/rgh/.vim/gnupg
 
 source /home/rgh/.vim/vimperator.vim
 
