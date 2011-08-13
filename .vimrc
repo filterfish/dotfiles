@@ -20,6 +20,8 @@ set runtimepath+=/home/rgh/.vim/vimwiki
 set runtimepath+=/home/rgh/.vim/puppet
 set runtimepath+=/home/rgh/.vim/solarized
 
+source /home/rgh/.vim/vimperator.vim
+
 syntax enable
 filetype plugin on
 filetype indent on
