@@ -1,4 +1,4 @@
-export RAILS_ENV=production
+[ $LOGNAME = 'digivizer' ] && export RAILS_ENV=production
 PATH=/usr/local/ruby-1.9.2-p136/bin:$PATH
 
 # vim:ft=zsh
