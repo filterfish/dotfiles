@@ -15,6 +15,9 @@ noremap K N|noremap <C-w>K <C-w>N
 noremap j f|noremap <C-w>j <C-w>f
 "noremap J F|noremap <C-w>J <C-w>F
 
+"Remap ctrl-n to be save. I don't think :w<CR> is helping my rsi.
+nnoremap <C-n> :w<CR>
+
 " set the various plugin paths
 set runtimepath+=/home/rgh/.vim/vimwiki
 set runtimepath+=/home/rgh/.vim/puppet
