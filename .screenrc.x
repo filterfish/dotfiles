@@ -1,8 +1,13 @@
 bind 'n' next
 bind 'e' prev
 
-# Change the history movement keys to Colemak
-markkeys "h=s:l=t:j=n:k=e"
+# replace the k binding with something less typable
+bind k
+bind ^k
+bind 'K' kill
+
+# Change the history movement keys (mainly for Colemak)
+markkeys "h=s:l=t:j=n:k=e:H=S:L=T:@=L:@=H"
 
 autodetach on
 
