@@ -1,0 +1,23 @@
+# doesn't work
+"\C-w": unix-filename-rubout
+
+set editing-mode vi-move
+set expand-tilde On
+set match-hidden-files Off
+set mark-symlinked-directories on
+set bell-style none
+set visible-stats on
+
+$if mode=vi
+    set keymap vi-command
+    "e": previous-history
+    "n": next-history
+    "s": backward-char
+    "t": forward-char
+    "h": vi-subst
+    "f": vi-end-word
+    "F": vi-end-word
+    # doesn't work
+    "k": vi-search-again
+    "K": vi-search-again
+$endif
