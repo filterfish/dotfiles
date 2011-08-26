@@ -11,9 +11,6 @@ function gr { readlink -f $(dirname $(git rev-parse --git-dir 2> /dev/null || ec
 function bitly { $(whence -p bitly) -l filterfish -k R_3c48c14783d79679341ede80ae4aeee8 $@ }
 function dict  { \dictl "$@" 2>&1 | colorit | less -R }
 
-function st { cd $HOME/dev/rails/pn/$1 }
-function sm { cd $HOME/dev/ruby/smith/$1 }
-
 function env { /usr/bin/env | sort }
 function setTitle { echo -n "]2;$1^G" }
 
