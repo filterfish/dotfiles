@@ -15,6 +15,10 @@ noremap K N|noremap <C-w>K <C-w>N
 noremap j f|noremap <C-w>j <C-w>f
 "noremap J F|noremap <C-w>J <C-w>F
 
+"L & H is remaped to S & T so unmap L & H
+nnoremap L <Nop>
+nnoremap H <Nop>
+
 "Remap ctrl-n to be save. I don't think :w<CR> is helping my rsi.
 nnoremap <C-n> :w<CR>
 
