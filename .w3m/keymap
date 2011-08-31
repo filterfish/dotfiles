@@ -4,19 +4,23 @@ keymap e MOVE_UP
 keymap s MOVE_LEFT
 keymap t MOVE_RIGHT
 
+keymap k SEARCH_NEXT
+
 keymap S BACK
 keymap T NEXT_PAGE
 
-keymap  SPC NEXT_PAGE
-keymap  S-SPC PREV_PAGE
+keymap SPC NEXT_PAGE
+keymap S-SPC PREV_PAGE
 
-keymap  E PREV_TAB
-keymap  N NEXT_TAB
-keymap  h NEW_TAB
-keymap  d CLOSE_TAB
+keymap E PREV_TAB
+keymap N NEXT_TAB
+keymap h NEW_TAB
+keymap d CLOSE_TAB
 
-keymap  b PREV_WORD
-keymap  w NEXT_WORD
+keymap o GOTO
+
+keymap b PREV_WORD
+keymap w NEXT_WORD
 
 keymap S BACK
 keymap T NEXT
@@ -25,3 +29,5 @@ keymap r RELOAD
 
 keymap C-f NEXT_PAGE
 keymap C-b PREV_PAGE
+
+keymap C-g PEEK
