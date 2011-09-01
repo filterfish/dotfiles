@@ -1,5 +1,6 @@
 bind 'n' next
 bind 'e' prev
+bind 'p'
 
 # replace the k binding with something less typable
 bind k
