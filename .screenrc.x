@@ -8,7 +8,7 @@ bind ^k
 bind 'K' kill
 
 # Change the history movement keys (mainly for Colemak)
-markkeys "h=s:l=t:j=n:k=e:H=S:L=T:@=L:@=H"
+markkeys "h=s:l=t:j=n:k=e:n=k:H=S:L=T:@=L:@=H"
 
 autodetach on
 
