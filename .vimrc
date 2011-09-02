@@ -13,6 +13,7 @@ noremap k n|noremap <C-w>k <C-w>n
 noremap K N|noremap <C-w>K <C-w>N
 
 noremap j f|noremap <C-w>j <C-w>f
+noremap J F|noremap <C-w>J <C-w>F
 noremap l t|noremap <C-w>l <C-w>t
 noremap L T|noremap <C-w>T <C-w>T
 
