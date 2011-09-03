@@ -33,7 +33,7 @@ MANPATH=/usr/share/man
 export MOZ_DISABLE_PANGO=1
 
 # Since enscript's config doesn't support font size:
-export ENSCRIPT='--font=Courier6 --header-font=Helvetica8 --header=$N|%W'
+export ENSCRIPT='--font=Courier7 --header-font=Helvetica8 --header=$N|%W'
 
 # Add the following to /etc/sudoers and you get
 # # proper bindings as root as well.
