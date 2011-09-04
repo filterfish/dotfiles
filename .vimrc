@@ -105,7 +105,7 @@ set nonumber
 " See http://items.sjbach.com/319/configuring-vim-right for an
 " explanation of the following:
 set hidden
-set wildmode=list:longest
+set wildmode=list:longest,full
 
 "set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
