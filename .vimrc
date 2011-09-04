@@ -107,8 +107,11 @@ set nonumber
 set hidden
 set wildmode=list:longest,full
 
-"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+
+" persistent undo.
+set undofile
+set undodir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 
 " Set the title in screen.
 if $TERM=='screen' || $TERM=='screen-256color'
