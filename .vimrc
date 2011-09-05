@@ -113,6 +113,9 @@ set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 set undofile
 set undodir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 
+" Shorten messages
+set shortmess=aI
+
 " Set the title in screen.
 if $TERM=='screen' || $TERM=='screen-256color'
     exe "set title titlestring=%f"
