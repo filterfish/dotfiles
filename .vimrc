@@ -116,6 +116,9 @@ set undodir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 " Shorten messages
 set shortmess=aI
 
+" Don't add two spaces when joining lines
+set nojoinspaces
+
 " Set the title in screen.
 if $TERM=='screen' || $TERM=='screen-256color'
     exe "set title titlestring=%f"
