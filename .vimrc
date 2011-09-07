@@ -27,11 +27,13 @@ nnoremap H <Nop>
 nnoremap <C-n> :w<CR>
 
 " set the various plugin paths
-set runtimepath+=/home/rgh/.vim/vimwiki
+set runtimepath+=/home/rgh/.vim/gnupg
+set runtimepath+=/home/rgh/.vim/commentary
 set runtimepath+=/home/rgh/.vim/puppet
 set runtimepath+=/home/rgh/.vim/solarized
-set runtimepath+=/home/rgh/.vim/gnupg
 
+source /home/rgh/.vim/udev.vim
+source /home/rgh/.vim/autotag.vim
 source /home/rgh/.vim/vimperator.vim
 
 syntax enable
