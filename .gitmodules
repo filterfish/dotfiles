@@ -7,3 +7,12 @@
 [submodule ".vim/commentary"]
 	path = .vim/commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule ".vim/surround"]
+	path = .vim/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule ".vim/orgmode"]
+	path = .vim/orgmode
+	url = git://github.com/jceb/vim-orgmode.git
+[submodule ".vim/utl"]
+	path = .vim/utl
+	url = git://github.com/vim-scripts/utl.vim.git
