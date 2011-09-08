@@ -29,6 +29,7 @@ nnoremap <C-n> :w<CR>
 " set the various plugin paths
 set runtimepath+=/home/rgh/.vim/gnupg
 set runtimepath+=/home/rgh/.vim/commentary
+set runtimepath+=/home/rgh/.vim/orgmode
 set runtimepath+=/home/rgh/.vim/puppet
 set runtimepath+=/home/rgh/.vim/repeat
 set runtimepath+=/home/rgh/.vim/surround
