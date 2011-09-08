@@ -31,6 +31,7 @@ set runtimepath+=/home/rgh/.vim/gnupg
 set runtimepath+=/home/rgh/.vim/commentary
 set runtimepath+=/home/rgh/.vim/puppet
 set runtimepath+=/home/rgh/.vim/repeat
+set runtimepath+=/home/rgh/.vim/surround
 set runtimepath+=/home/rgh/.vim/solarized
 
 source /home/rgh/.vim/udev.vim
