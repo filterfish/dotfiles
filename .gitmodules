@@ -16,3 +16,6 @@
 [submodule ".vim/utl"]
 	path = .vim/utl
 	url = git://github.com/vim-scripts/utl.vim.git
+[submodule ".vim/speeddating"]
+	path = .vim/speeddating
+	url = git://github.com/tpope/vim-speeddating.git
