@@ -1,6 +1,6 @@
 HISTFILE=~/.histfile
-HISTSIZE=2048
-SAVEHIST=2048
+HISTSIZE=5120
+SAVEHIST=4096
 
 setopt nocheckjobs
 
