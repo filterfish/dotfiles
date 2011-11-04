@@ -58,6 +58,4 @@ export EDITOR
 # Give bc sesible defaults
 export BC_ENV_ARGS="-l -q"
 
-[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
-
 # vim: ft=zsh
