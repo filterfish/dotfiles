@@ -38,8 +38,8 @@ export MOZ_DISABLE_PANGO=1
 export ENSCRIPT='--font=Courier7 --header-font=Helvetica8 --header=$N|%W'
 
 # Add the following to /etc/sudoers and you get
-# # proper bindings as root as well.
-
+# proper bindings as root as well.
+#
 export INPUTRC=$HOME/.inputrc
 export LESSKEY=$HOME/.less
 export SCREENRC=$HOME/.screenrc
@@ -54,7 +54,6 @@ alias ls='ls -F'
 
 EDITOR=vi
 FIGNORE=".git"
-HISTIGNORE="ls:b[fg]:vi:cd"
 export EDITOR
 
 # Give bc sesible defaults
