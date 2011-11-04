@@ -42,6 +42,17 @@ function gemdoc {
   luakit $gem_dir/doc/`$(whence ls) $gem_dir/doc | grep $1 | sort | tail -1`/rdoc/index.html
 }
 
+function title {
+  case "$TERM" in
+    screen*)
+      print -Pn "\033k\033\134\033k$1\033\134"
+      ;;
+    xterm*)
+      print -Pn "\e]0;%n@%m: $*\a"
+      ;;
+  esac
+}
+
 function uriencode { echo $1 | ruby -rcgi -e "puts CGI.escape(\"$1\")"}
 function uridecode { echo $1 | ruby -rcgi -e "puts CGI.unescape(\"$1\")" }
 
