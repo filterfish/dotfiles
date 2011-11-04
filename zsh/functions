@@ -23,7 +23,7 @@ function gemdoc {
   luakit $gem_dir/doc/`$(whence ls) $gem_dir/doc | grep $1 | sort | tail -1`/rdoc/index.html
 }
 
-function urlencode { echo $1 | perl -MURI::Escape -lne 'print uri_escape($_)' }
-function urldecode { echo $1 | perl -MURI::Escape -lne 'print uri_unescape($_)' }
+function uriencode { echo $1 | ruby -rcgi -e "puts CGI.escape(\"$1\")"}
+function uridecode { echo $1 | ruby -rcgi -e "puts CGI.unescape(\"$1\")" }
 
 # vim:ft=zsh

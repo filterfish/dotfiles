@@ -19,3 +19,6 @@
 [submodule ".vim/speeddating"]
 	path = .vim/speeddating
 	url = git://github.com/tpope/vim-speeddating.git
+[submodule ".vim/gundo"]
+	path = .vim/gundo
+	url = http://github.com/sjl/gundo.vim.git
