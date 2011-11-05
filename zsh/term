@@ -3,11 +3,14 @@ case "$TERM" in
     if [ -z "$XTERM_VERSION" ] ; then
       echo "Warning: Terminal wrongly calling itself 'xterm'."
     else
-      case "$XTERM_VERSION" in
-        "XTerm(276)") TERM=xterm-256color ;;
-        "XTerm") ;;
-        *) echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION" ;;
-      esac
+      if test $(echo $XTERM_VERSION | sed 's/XTerm(\(.*\))/\1/') -gt 270; then
+        TERM=xterm-256color
+      else
+        case "$XTERM_VERSION" in
+          "XTerm") ;;
+          *) echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION" ;;
+        esac
+      fi
     fi
     ;;
   screen)
