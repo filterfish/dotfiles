@@ -33,7 +33,14 @@ function dict  { \dictl "$@" 2>&1 | colorit | less -R }
 function env { /usr/bin/env | sort }
 function setTitle { echo -n "]2;$1^G" }
 
-function today { date +%Y%m%d }
+# today's date formatted in ISO standard.  If an argument is passed then
+# it is treated as a date and added or subtracted to the data.
+# NOTE. This does not take into acount leap seconds.
+function today {
+  format='%Y%m%d'
+  [ -z $1 ] && date +$format || ruby -e "puts (Time.now + $1 * 86400).strftime(\"$format\")"
+}
+
 function now { date $1 +%Y%m%dT%H%M%S }
 
 function gemdoc {
