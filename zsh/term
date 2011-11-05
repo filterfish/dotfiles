@@ -4,7 +4,7 @@ case "$TERM" in
       echo "Warning: Terminal wrongly calling itself 'xterm'."
     else
       case "$XTERM_VERSION" in
-        "XTerm(271)") TERM=xterm-256color ;;
+        "XTerm(276)") TERM=xterm-256color ;;
         "XTerm") ;;
         *) echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION" ;;
       esac
