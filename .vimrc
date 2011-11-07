@@ -44,9 +44,11 @@ nnoremap <F5> :GundoToggle<CR>
 
 source /home/rgh/.vim/udev.vim
 source /home/rgh/.vim/autotag.vim
-source /home/rgh/.vim/vimperator.vim
 
 syntax enable
+syntax sync fromstart
+
+filetype on
 filetype plugin on
 filetype indent on
 
@@ -82,7 +84,6 @@ let g:allml_global_maps = 1
 let loaded_matchparen = 1
 
 " rails stuff.
-filetype on  " Automatically detect file types.
 
 "set nocompatible  " We don't want vi compatibility.
 
