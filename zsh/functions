@@ -32,11 +32,11 @@ function env { /usr/bin/env | sort }
 function setTitle { echo -n "]2;$1^G" }
 
 # today's date formatted in ISO standard.  If an argument is passed then
-# it is treated as a date and added or subtracted to the data.
-# NOTE. This does not take into acount leap seconds.
+# it is treated as a day and added or subtracted to the date.
+# See http://www.walkernews.net/2007/06/03/date-arithmetic-in-linux-shell-scripts/
 function today {
   format='%Y%m%d'
-  [ -z $1 ] && date +$format || ruby -e "puts (Time.now + $1 * 86400).strftime(\"$format\")"
+  [ -z $1 ] && date +$format || date -d "$[$1 * -1] day ago" +$format
 }
 
 function now { date $1 +%Y%m%dT%H%M%S }
