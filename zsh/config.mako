@@ -1,6 +1,8 @@
-# Sort ssh keys out
-keychain --nogui  --quiet id_rsa
-. ~/.keychain/$HOST-sh
+# Sort gpg & ssh keys out
+[ -f $HOME/.gpg-agent-info ] && source $HOME/.gpg-agent-info
+GPG_TTY=$(tty)
+
+export GPG_TTY GPG_AGENT_INFO SSH_AUTH_SOCK SSH_AGENT_PID
 
 XDG_DATA_HOME=$HOME/.config
 XDG_CACHE_HOME=$HOME/.cache
