@@ -1,5 +1,4 @@
-"set editor='uxterm -e vim'
-set editor='gvim -f'
+set editor='zsh -c "uxterm -class FloatingUXterm -e /usr/bin/vim"'
 
 set defsearch='duckduckgo'
 set complete='l'
