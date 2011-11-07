@@ -7,9 +7,7 @@ function current_db {
   fi
 }
 
-function gem-root {
-  gem env |& grep 'INSTALLATION DIRECTORY' | awk '{print $4}'
-}
+function gem-root { gem env gemdir 2> /dev/null }
 
 function cdr { cd ~/dev/rails/$1 }
 function cdl { cd ~/dev/ruby/$1 }
