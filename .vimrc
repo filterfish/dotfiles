@@ -133,17 +133,16 @@ set shortmess=aI
 " Don't add two spaces when joining lines
 set nojoinspaces
 
+" Vi-style editing in the command-line
+"nnoremap : q:a
+"nnoremap / q/a
+"nnoremap ? q?a
+
 " Set the title in screen.
 if $TERM=='screen' || $TERM=='screen-256color'
     exe "set title titlestring=%f"
     exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
 endif
-
-" Removes trailing spaces
-function TrimWhiteSpace()
-  %s/\s*$//
-  ''
-:endfunction
 
 if has("gui_running")
   set guioptions-=m  "remove menu bar
