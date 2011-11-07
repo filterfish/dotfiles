@@ -30,11 +30,14 @@ nnoremap <C-n> :w<CR>
 set runtimepath+=/home/rgh/.vim/gnupg
 set runtimepath+=/home/rgh/.vim/commentary
 set runtimepath+=/home/rgh/.vim/orgmode
+set runtimepath+=/home/rgh/.vim/gundo
 set runtimepath+=/home/rgh/.vim/puppet
 set runtimepath+=/home/rgh/.vim/repeat
 set runtimepath+=/home/rgh/.vim/surround
 set runtimepath+=/home/rgh/.vim/solarized
 set runtimepath+=/home/rgh/.vim/utl
+
+nnoremap <F5> :GundoToggle<CR>
 
 source /home/rgh/.vim/udev.vim
 source /home/rgh/.vim/autotag.vim
