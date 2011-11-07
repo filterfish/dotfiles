@@ -83,6 +83,9 @@ runtime macros/matchit.vim
 let g:allml_global_maps = 1
 let loaded_matchparen = 1
 
+" Change the leader from \ to ,
+let mapleader = ","
+
 " rails stuff.
 
 "set nocompatible  " We don't want vi compatibility.
