@@ -1,6 +1,4 @@
 
-alias lrvm='eval $($HOME/bin/lrvm)'
-
 setopt prompt_subst
 autoload -Uz vcs_info
 
