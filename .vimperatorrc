@@ -52,5 +52,5 @@ command! prod open http://topikality.com
 command! Prod tabopen http://topikality.com
 command! dev open http://localhost:3000
 command! Dev tabopen http://localhost:3000
-command! gems open /usr/local/ruby-1.9.2-p136/lib/ruby/gems/1.9.1/doc
+command! gems open file:///usr/local/ruby-1.9.3-p0/lib/ruby/gems/1.9.1/doc
 command! gems18 open file:///usr/lib/ruby/gems/1.8/doc
