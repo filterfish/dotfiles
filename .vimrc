@@ -17,6 +17,9 @@ noremap J F|noremap <C-w>J <C-w>F
 noremap l t|noremap <C-w>l <C-w>t
 noremap L T|noremap <C-w>T <C-w>T
 
+set spelllang=en_gb
+set spell
+
 "noremap J F|noremap <C-w>J <C-w>F
 
 "L & H is remaped to S & T so unmap L & H
