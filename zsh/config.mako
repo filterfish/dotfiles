@@ -18,4 +18,9 @@ PULSE_SERVER=localhost
 
 export KBD_LAYOUT PULSE_SERVER
 
+# Set up for rbenv. Note, order is important.
+PATH=$HOME/.rbenv/shims:$PATH:$HOME/.rbenv/bin
+source /home/rgh/.rbenv/completions/rbenv.zsh
+rbenv rehash 2>/dev/null
+
 # vim:ft=zsh
