@@ -33,6 +33,7 @@ set runtimepath+=/home/rgh/.vim/gundo
 set runtimepath+=/home/rgh/.vim/puppet
 set runtimepath+=/home/rgh/.vim/repeat
 set runtimepath+=/home/rgh/.vim/surround
+set runtimepath+=/home/rgh/.vim/speeddating
 set runtimepath+=/home/rgh/.vim/solarized
 set runtimepath+=/home/rgh/.vim/utl
 
