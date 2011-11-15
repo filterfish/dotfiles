@@ -128,7 +128,7 @@ set wildmode=list:longest,full
 set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 
 " persistent undo.
-if version >= 730
+if v:version >= 703
   set undofile
   set undodir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 endif
