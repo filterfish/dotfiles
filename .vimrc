@@ -17,6 +17,8 @@ noremap J F|noremap <C-w>J <C-w>F
 noremap l t|noremap <C-w>l <C-w>t
 noremap L T|noremap <C-w>T <C-w>T
 
+nmap . .`[
+
 set spelllang=en_gb
 set spell
 
