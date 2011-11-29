@@ -1,8 +1,15 @@
-reload-history() { fc -R; zle accept-line }
+function reload-history { fc -R; zle accept-line }
 
 zle -N reload-history
 
-bindkey -M vicmd "/"  vi-history-search-backward
+#bindkey -M isearch "^M" accept-search
+
+bindkey -M isearch "^n" vi-repeat-search
+bindkey -M isearch "^N" vi-rev-repeat-search
+
+bindkey -M vicmd "?" history-incremental-search-forward
+bindkey -M vicmd "/" history-incremental-search-backward
+
 bindkey -M vicmd "^t" transpose-chars
 bindkey -M vicmd "u"  undo
 bindkey -M vicmd "^r" reload-history
@@ -15,6 +22,7 @@ bindkey -M viins "^h" backward-delete-char
 bindkey -M viins "^?" backward-delete-char
 
 bindkey -M viins "^f" push-line
+bindkey -M vicmd "^f" push-line
 bindkey -M viins "^O" quote-region
 
 bindkey -M viins "^l" clear-screen
