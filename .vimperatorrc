@@ -1,5 +1,4 @@
-set editor='zsh -c "uxterm -class FloatingUXterm -e /usr/bin/vim"'
-
+set editor='uxterm -class FloatingUXterm -e vim'
 set defsearch='duckduckgo'
 set complete='l'
 set showstatuslinks=2
