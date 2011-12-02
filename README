@@ -1,0 +1,11 @@
+Given that you probably don't want the normal user branch in the root
+directory you should just checkout the root branch:
+
+git init .dotfiles
+cd /root/.dotfiles
+git remote add -t root origin https://github.com/filterfish/dotfiles.git
+git fetch -p
+git checkout -t origin/root
+
+cd /root
+ls -d ~/.dotfiles/.* | grep -vw .git | xargs -n1 ln -s
