@@ -12,8 +12,4 @@ bindkey -M vicmd "K" vi-rev-repeat-search
 bindkey -M isearch "^n" vi-repeat-search
 bindkey -M isearch "^e" vi-rev-repeat-search
 
-export INPUTRC=$HOME/.inputrc
-export LESSKEY=$HOME/.less
-export VIMINIT="source $HOME/.vimrc"
-
 # vim:ft=zsh

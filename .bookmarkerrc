@@ -1,6 +1,0 @@
-index:
-  path: /home/rgh/.bookmarker/index
-
-db:
-  uri: http://localhost:5984/
-  name: bookmarker

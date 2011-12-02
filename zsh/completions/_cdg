@@ -1,4 +1,0 @@
-#compdef cdg
-
-_description files expl 'gem installation dir'
-_files -W $(gem-root)/gems -/ && return

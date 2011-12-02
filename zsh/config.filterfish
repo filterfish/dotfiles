@@ -1,5 +1,0 @@
-PATH=/usr/local/ruby-1.9.2-p0/bin:$PATH
-
-export RAILS_ENV=production
-
-# vim:ft=zsh

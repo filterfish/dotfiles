@@ -1,14 +1,8 @@
-fpath=($dotfiles/zsh/completions $fpath)
-
 autoload -U compinit
 compinit
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' squeeze-slashes true
-
-zstyle ':completion:*:processes-names' command  'ps c -u ${USER} -o command | uniq'
-zstyle ':completion:*:*:*:*:processes' menu yes select
-zstyle ':completion:*:kill:*' force-list always
 
 # vim:ft=zsh

@@ -1,18 +1,6 @@
 function source_if_exists { [ -f $1 ] && source $1 }
 function short_hostname { hostname -s }
 
-function current_db {
-  if [ ! -z $git_root ] && [ -f $git_root/config/database.yml ]; then
-    awk '/'${RAILS_ENV-development}'/,/^$|\n|^[a-z]/{print $0};' $git_root/config/database.yml | awk '/database:/{print $2}'
-  fi
-}
-
-function gem-root { gem env gemdir 2> /dev/null }
-
-function cdr { cd ~/dev/rails/$1 }
-function cdl { cd ~/dev/ruby/$1 }
-function cdg { cd $(gem-root)/gems/$1 }
-
 function gr {
   local git_root
   git_root=$(git rev-parse --git-dir 2> /dev/null)
@@ -24,16 +12,9 @@ function gr {
 }
 
 function cr { cd $(gr || echo '.')/$1 }
-
-function t { $HOME/bin/t --task-dir $([ -d $git_root/.tasks ] && echo $git_root/.tasks || echo ~/doc) --list tasks }
-
-function bitly { $(whence -p bitly) -l filterfish -k R_3c48c14783d79679341ede80ae4aeee8 $@ }
-function dict  { \dictl "$@" 2>&1 | colorit | less -R }
-
 function env { /usr/bin/env | sort }
-function setTitle { echo -n "]2;$1^G" }
 
-# today's date formatted in ISO standard.  If an argument is passed then
+# today's date formatted in ISO standard. If an argument is passed then
 # it is treated as a day and added or subtracted to the date.
 # See http://www.walkernews.net/2007/06/03/date-arithmetic-in-linux-shell-scripts/
 function today {
@@ -42,25 +23,5 @@ function today {
 }
 
 function now { date $1 +%Y%m%dT%H%M%S }
-
-function gemdoc {
-  [ -z $1 ] && { echo "Please supply a gem"; return; }
-  gem_dir=`gem env gemdir`
-  luakit $gem_dir/doc/`$(whence ls) $gem_dir/doc | grep $1 | sort | tail -1`/rdoc/index.html
-}
-
-function title {
-  case "$TERM" in
-    screen*)
-      print -Pn "\033k\033\134\033k$1\033\134"
-      ;;
-    xterm*)
-      print -Pn "\e]0;%n@%m: $*\a"
-      ;;
-  esac
-}
-
-function uriencode { echo $1 | ruby -rcgi -e "puts CGI.escape(\"$1\")"}
-function uridecode { echo $1 | ruby -rcgi -e "puts CGI.unescape(\"$1\")" }
 
 # vim:ft=zsh

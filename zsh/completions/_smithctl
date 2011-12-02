@@ -1,4 +1,0 @@
-#compdef smithctl
-
-_description files expl 'dev repos'
-_arguments "1: :(list message stop start restart agents)"

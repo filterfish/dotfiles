@@ -1,39 +1,6 @@
-function set_git_root {
-  local _git_root=$(gr)
-  [ -z $_git_root ] || git_root=$_git_root
-}
-
-function set_default_database {
-  unset PGDATABASE; db=$(current_db); [ -z $db ] || export PGDATABASE=$db
-}
-
-function set_ruby_version {
-  if whence ruby > /dev/null; then
-    ruby_version=" {$(ruby -v | awk '{print $2}')}"
-  else
-    ruby_version=""
-  fi
-}
-
-function set_title { title "$(basename $PWD)" }
-
 setopt prompt_subst
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:*' formats ' [%b]'
-zstyle ':vcs_info:*' actionformats ' [%b|%F{1}%a%f]'
-zstyle ':vcs_info:*' enable git
-
 zle_highlight=(none)
 
-function precmd {
-  vcs_info
-  set_title
-  set_git_root
-  set_ruby_version
-  set_default_database
-}
-
-PROMPT=$'%m:%/%{\e[0;37m%}${ruby_version}%{\e[0;36m%}${vcs_info_msg_0_}%{\e[0m%} '
+PROMPT=$'%m:%/# '
 
 # vim:ft=zsh

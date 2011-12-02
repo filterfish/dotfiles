@@ -1,6 +1,0 @@
-[ $LOGNAME = 'digivizer' ] && export RAILS_ENV=production
-
-# Work around for the SSL problems in 1.9.2p290 (and possibly other versions).
-export SSL_CERT_FILE=/var/lib/digivizer/digivizer/cacert.pem
-
-# vim:ft=zsh

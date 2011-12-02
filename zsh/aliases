@@ -1,7 +1,4 @@
 alias ls='ls -F'
 alias w3m='=w3m -no-mouse'
-alias agrep=tre-agrep
-
-alias mpc='mpc -f "[[[%artist%/]%album% - ]]%title%]|[%file%]"'
 
 # vim:ft=zsh
