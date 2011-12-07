@@ -8,4 +8,4 @@ git fetch -p
 git checkout -t origin/root
 
 cd /root
-ls -d ~/.dotfiles/.* | grep -vw .git | xargs -n1 ln -s
+ls -d ~/.dotfiles/.* | grep -Evw '.git|\.|\.\.' | xargs -n1 ln -s
