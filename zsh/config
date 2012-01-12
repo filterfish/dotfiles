@@ -45,6 +45,8 @@ export LESSKEY=$HOME/.less
 export SCREENRC=$HOME/.screenrc
 export VIMINIT="source $HOME/.vimrc"
 
+export PS_FORMAT="user,pid,ppid,time,%cpu,rss,tname,cmd"
+
 # collation = A-Za-z
 export LC_COLLATE=C
 
