@@ -30,6 +30,9 @@ function t { $HOME/bin/t --task-dir $([ -d $git_root/.tasks ] && echo $git_root/
 function bitly { $(whence -p bitly) -l filterfish -k R_3c48c14783d79679341ede80ae4aeee8 $@ }
 function dict  { \dictl "$@" 2>&1 | colorit | less -R }
 
+function mpc { /usr/bin/mpc -f "[[[%artist%/]%album% - ]]%title%]|[%file%]" $@ }
+
+
 function env { /usr/bin/env | sort }
 function setTitle { echo -n "]2;$1^G" }
 
