@@ -1,0 +1,4 @@
+#compdef rabbitmqctl
+
+_description files expl 'rabbitmqctl'
+_arguments "1: :(stop stop_app start_app wait reset force_reset rotate_logs cluster force_cluster cluster_status add_user delete_user change_password clear_password set_user_tags list_users add_vhost delete_vhost list_vhosts set_permissions clear_permissions list_permissions list_user_permissions list_queues list_exchanges list_bindings list_connections list_channels list_consumers status environment report close_connection trace_on trace_off set_vm_memory_high_watermark)"
