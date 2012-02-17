@@ -1,3 +1,6 @@
+" Change the leader from \ to ,
+let mapleader = ","
+
 noremap n j|noremap <C-w>n <C-w>j
 noremap e k|noremap <C-w>e <C-w>k
 noremap N J|noremap <C-w>N <C-w>J
@@ -87,9 +90,6 @@ runtime macros/matchit.vim
 
 let g:allml_global_maps = 1
 let loaded_matchparen = 1
-
-" Change the leader from \ to ,
-let mapleader = ","
 
 " rails stuff.
 
