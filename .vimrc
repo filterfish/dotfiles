@@ -18,24 +18,24 @@ noremap K N|noremap <C-w>K <C-w>N
 noremap j f|noremap <C-w>j <C-w>f
 noremap J F|noremap <C-w>J <C-w>F
 noremap l t|noremap <C-w>l <C-w>t
-noremap L T|noremap <C-w>T <C-w>T
-
-" swap characters. Works like ctl-t in zsh.
-nmap <C-p> Xp
-
-nmap . .`[
-
-set spelllang=en_gb
-set spell
-
-"noremap J F|noremap <C-w>J <C-w>F
+noremap L T|noremap <C-w>L <C-w>T
 
 "L & H is remaped to S & T so unmap L & H
 nnoremap L <Nop>
 nnoremap H <Nop>
 
-"Remap ctrl-n to be save. I don't think :w<CR> is helping my rsi.
-nnoremap <C-n> :w<CR>
+"Remap ctrl-n to be save. :w<cr> is not helping my rsi!
+nnoremap <C-n> :w<cr>
+
+" swap characters. Works like ctl-t in zsh.
+nmap <C-p> Xp
+
+" Position the cursor at the beginning of the redo
+nmap . .`[
+
+set spelllang=en_gb
+" Make this togglable. TODO
+"set spell
 
 " set the various plugin paths
 set runtimepath+=/home/rgh/.vim/gnupg
@@ -48,10 +48,13 @@ set runtimepath+=/home/rgh/.vim/speeddating
 set runtimepath+=/home/rgh/.vim/solarized
 set runtimepath+=/home/rgh/.vim/utl
 
-nnoremap <F5> :GundoToggle<CR>
-
 source /home/rgh/.vim/udev.vim
 source /home/rgh/.vim/autotag.vim
+
+nnoremap <leader>s :%s/\s\+$//<cr>:let @/=''<cr>
+nnoremap <leader>w :set nowrap!<cr>
+nnoremap <leader>m :GundoToggle<cr>
+nnoremap <leader>r :set filetype=ruby<cr>
 
 syntax enable
 syntax sync fromstart
