@@ -63,10 +63,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
-map sb i#!/usr/bin/env ruby<CR>
-map fp {!}fmt<CR>
+map sb :se paste<cr>ggI#!/usr/bin/env ruby<cr># -*- encoding: utf-8 -*-<cr><cr><esc>`':se nopaste<cr>
+map us :se paste<cr>ggI# -*- encoding: utf-8 -*-<cr><esc>`':se nopaste<cr>
 
-map pa :se paste
 highlight Pmenu ctermbg=238 gui=bold
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
