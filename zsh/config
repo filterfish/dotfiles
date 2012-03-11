@@ -56,7 +56,7 @@ EDITOR=vi
 FIGNORE=".git"
 export EDITOR
 
-# Give bc sesible defaults
-export BC_ENV_ARGS="-l -q"
+# Set the config file for bc
+export BC_ENV_ARGS=$dotfiles/.bcrc
 
 # vim: ft=zsh
