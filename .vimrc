@@ -103,14 +103,14 @@ else
   set nomodeline
 endif
 
-set tags=tags;
-
 set pastetoggle=<c-v>
 
 set viminfo^=!
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 
 set autoindent
+
+set tags=tags;
 
 " For vim/ctags to recognise methods with a ?
 set iskeyword+=?
