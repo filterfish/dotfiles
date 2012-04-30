@@ -9,8 +9,11 @@
   ui = auto
 
 [alias]
-  stat = status
+  a    = add
   c    = commit
+  d    = diff
+  l    = log
+  s    = status
   co   = checkout
   root = !pwd
   flog = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
