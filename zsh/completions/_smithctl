@@ -1,4 +1,4 @@
 #compdef smithctl
 
 _description files expl 'smith commands'
-_arguments "1: :(agents common kill list logger metadata pop_queue restart start state stop)"
+_arguments "1: :(acls agents cat commands kill list logger metadata pop restart rm start state stop subscribe top version)"
