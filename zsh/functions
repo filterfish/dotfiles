@@ -7,7 +7,7 @@ function current_db {
   fi
 }
 
-function gem-root { gem env gemdir 2> /dev/null }
+function gem-root { ruby -rrbconfig -e 'puts "#{RbConfig::CONFIG["libdir"]}/ruby/gems/1.9.1"' }
 
 function cdr { cd ~/dev/rails/$1 }
 function cdl { cd ~/dev/ruby/$1 }
