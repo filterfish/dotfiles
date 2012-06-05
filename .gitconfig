@@ -16,5 +16,5 @@
   s    = status
   co   = checkout
   root = !pwd
-  flog = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  flog = log --graph --decorate --pretty=oneline --abbrev-commit
   slog = log --pretty=oneline
