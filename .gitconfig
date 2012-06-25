@@ -17,4 +17,3 @@
   co   = checkout
   root = !pwd
   flog = log --graph --decorate --pretty=oneline --abbrev-commit
-  slog = log --pretty=oneline
