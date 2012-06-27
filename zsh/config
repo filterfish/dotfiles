@@ -27,8 +27,7 @@ setopt nobeep
 setopt extended_glob
 setopt multios
 
-# Make sure the path is clean
-PATH=$HOME/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
+PATH=$HOME/bin:$PATH
 MANPATH=/usr/share/man
 
 # This sould speed up iceweasel
