@@ -1,9 +1,5 @@
 # Ruby stuff
 
-#export RUBYLIB="$RUBYLIB:$HOME/src/ruby/rip/lib"
-#export PATH="$PATH:$HOME/src/ruby/rip/bin"
-#eval `rip-config`
-
 RUBYOPT=rubygems
 GEM_PRIVATE_KEY=$HOME/.gem/gem-private_key.pem
 GEM_CERTIFICATE_CHAIN=$HOME/.gem/gem-public_key.pem
