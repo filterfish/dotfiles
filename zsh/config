@@ -6,7 +6,6 @@ setopt nocheckjobs
 
 setopt pushd_ignore_dups
 
-
 setopt hist_expire_dups_first
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
@@ -44,7 +43,7 @@ export LESSKEY=$HOME/.less
 export SCREENRC=$HOME/.screenrc
 export VIMINIT="source $HOME/.vimrc"
 
-export PS_FORMAT="user,pid,ppid,time,%cpu,rss,tname,cmd"
+export PS_FORMAT="pid,ppid,sess,user,group,rss,c,cputime,cmd"
 
 # collation = A-Za-z
 export LC_COLLATE=C
