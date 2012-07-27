@@ -7,6 +7,8 @@ zle -N reload-history
 bindkey -M isearch "^n" vi-repeat-search
 bindkey -M isearch "^N" vi-rev-repeat-search
 
+bindkey -M vicmd " " vi-find-next-char
+
 bindkey -M vicmd "?" history-incremental-search-forward
 bindkey -M vicmd "/" history-incremental-search-backward
 
@@ -23,7 +25,6 @@ bindkey -M viins "^?" backward-delete-char
 
 bindkey -M viins "^f" push-line
 bindkey -M vicmd "^f" push-line
-bindkey -M viins "^O" quote-region
 
 bindkey -M viins "^l" clear-screen
 bindkey -M viins '^i' expand-or-complete-prefix
