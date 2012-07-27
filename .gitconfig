@@ -1,6 +1,6 @@
 [user]
   name = Richard Heycock
-  email = rgh@roughage.com.au
+  email = rgh@filterfish.org
 
 [color]
   branch = auto
@@ -9,9 +9,12 @@
   ui = auto
 
 [alias]
-  stat = status
+  a    = add
   c    = commit
+  d    = diff
+  l    = log
+  s    = status
   co   = checkout
   root = !pwd
-  flog = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  slog = log --pretty=oneline
+  fl = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative
+  fla = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative --all
