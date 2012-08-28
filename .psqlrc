@@ -1,6 +1,5 @@
-\set AUTOCOMMIT off
 \pset null 'NULL'
-\set HISTFILE /home/rgh/.psql_history-:DBNAME
-\set HISTSIZE 2000
+\set HISTFILE ~/.psql.history.:DBNAME
+\set HISTSIZE 6000
 \set HISTCONTROL ignoreboth
 \timing
