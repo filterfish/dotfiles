@@ -15,7 +15,7 @@ setopt hist_save_no_dups
 setopt inc_append_history
 setopt extended_history
 setopt list_types
-setopt no_bang_hist
+#setopt no_bang_hist
 
 setopt complete_in_word
 
@@ -25,6 +25,8 @@ setopt nohup
 setopt nobeep
 setopt extended_glob
 setopt multios
+
+autoload zmv
 
 PATH=$HOME/bin:$PATH
 MANPATH=/usr/share/man
