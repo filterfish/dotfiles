@@ -1,5 +1,5 @@
 \pset null 'NULL'
-\set HISTFILE ~/.psql.history. :DBNAME
+\set HISTFILE ~/.psql_history. :DBNAME
 \set HISTSIZE 6000
 \set HISTCONTROL ignoreboth
 \timing
