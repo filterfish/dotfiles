@@ -11,9 +11,9 @@
 [alias]
   a    = add
   c    = commit
-  d    = diff
-  l    = log
-  s    = status
+  df    = diff
+  lg    = log
+  st    = status
   co   = checkout
   root = !pwd
   fl = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative
