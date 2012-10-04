@@ -22,3 +22,12 @@
 [submodule ".vim/gundo"]
 	path = .vim/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule ".vim/vim-orgmode"]
+	path = .vim/vim-orgmode
+	url = git://github.com/jceb/vim-orgmode.git
+[submodule ".vim/yankring"]
+	path = .vim/yankring
+	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "dbext.vim"]
+	path = dbext.vim
+	url = https://github.com/vim-scripts/dbext.vim
