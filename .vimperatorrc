@@ -1,4 +1,5 @@
-set editor='uxterm -class FloatingUXterm -e vim'
+set editor='$HOME/bin/vimperator-editor'
+
 set defsearch='duckduckgo'
 set complete='l'
 set showstatuslinks=2
@@ -41,15 +42,9 @@ command! vs viewsource
 
 command! google open http://www.google.com <args>
 command! wiki open http://wikipedia.org <args>
-command! red open http://www.redditall.com
-command! Red tabopen http://www.redditall.com
-command! pm open http://pm.directednews.com
-command! Pm tabopen http://pm.directednews.com
 command! tw open http://twitter.com
 command! Tw tabopen http://twitter.com
-command! prod open http://topikality.com
-command! Prod tabopen http://topikality.com
 command! dev open http://localhost:3000
 command! Dev tabopen http://localhost:3000
-command! gems open file:///usr/local/ruby-1.9.3-p0/lib/ruby/gems/1.9.1/doc
-command! gems18 open file:///usr/lib/ruby/gems/1.8/doc
+command! gems open file:///usr/local/ruby-1.9.3-p194/lib/ruby/gems/1.9.1/doc
+command! pydoc open file:///usr/share/doc/python2.7/html/index.html
