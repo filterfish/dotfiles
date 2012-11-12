@@ -3,7 +3,7 @@ directory you should just checkout the root branch:
 
 git init .dotfiles
 cd /root/.dotfiles
-git remote add -t root origin https://github.com/filterfish/dotfiles.git
+git remote add -t root origin git://github.com/filterfish/dotfiles.git
 git fetch -p
 git checkout -t origin/root
 
