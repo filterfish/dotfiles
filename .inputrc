@@ -1,0 +1,17 @@
+set editing-mode vi
+set match-hidden-files Off
+set bell-style none
+set visible-stats on
+
+"\C-l": clear-screen
+
+set keymap vi-command
+$if mode=vi
+    "e": previous-history
+    "n": next-history
+    "s": backward-char
+    "t": forward-char
+    "h": vi-subst
+    "f": vi-end-word
+    "F": vi-end-word
+$endif
