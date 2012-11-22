@@ -11,10 +11,10 @@
 [alias]
   a    = add
   c    = commit
-  d    = diff
-  l    = log
-  s    = status
+  dd   = diff
+  st   = status
   co   = checkout
   root = !pwd
-  fl = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative
-  fla = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative --all
+  ll   = log
+  ls   = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative
+  lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative --all
