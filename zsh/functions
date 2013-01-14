@@ -10,7 +10,7 @@ function current_db {
 function gem-root { ruby -rrbconfig -e 'puts "#{RbConfig::CONFIG["libdir"]}/ruby/gems/1.9.1"' }
 
 function cdr { cd ~/dev/rails/$1 }
-function cdl { cd ~/dev/ruby/$1 }
+function cdd { cd ~/dev/ruby/$1 }
 function cdg { cd $(gem-root)/gems/$1 }
 
 function gr {

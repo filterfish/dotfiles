@@ -1,4 +1,4 @@
-#compdef cdl
+#compdef cdd
 
 _description files expl 'ruby dev repos'
 _files -W ~/dev/ruby -/ && return
