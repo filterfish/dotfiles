@@ -1,5 +1,6 @@
 alias bc='bc -q'
 alias ls='ls -F'
+alias ll='ls -lF'
 alias w3m='=w3m -no-mouse'
 alias agrep=tre-agrep
 
