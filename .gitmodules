@@ -31,3 +31,6 @@
 [submodule "dbext.vim"]
 	path = dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim
+[submodule "zsh/zsh-completions"]
+	path = zsh/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
