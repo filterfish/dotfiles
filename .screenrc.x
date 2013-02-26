@@ -22,7 +22,10 @@ startup_message off
 backtick 1 1 1 sh -c "[ $(cat /etc/timezone) != 'Etc/UTC' ] && date -u '+%H:%M '"
 
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%1`%{B}(%c) %{g}]'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%- %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%1`%{B}(%c) %{g}]'
+
+# hardstatus string   '%{= kg}[ %{G}%H %{g}][%-w%{= m}%n %t%{-}%+w %-= ][%{B} %d/%m %{W}%1`%{B}(%c) %{g}]'
+
 
 defc1 off
 defutf8 on
@@ -61,3 +64,5 @@ termcapinfo xterm* 'XC=K%,%\E(B,[\304,\\\\\326,]\334,{\344,|\366,}\374,~\337'
 
 # use xterm's scrollback buffer
 termcapinfo xterm*|xterms|xs|rxvt ti@:te@
+
+# vim: ft=screen
