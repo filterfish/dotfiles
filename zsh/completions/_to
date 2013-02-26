@@ -1,0 +1,14 @@
+#compdef to
+local curcontext="$curcontext" state line expl
+
+local _read_dirs
+
+function _read_bookmarks { compadd "$@" - $HOME/.to/*(@:t) }
+
+_arguments -s \
+  '-a+[Add a new bookmark]:file:_files::directories' \
+  '-p+[Print the bookmark path]::_read_bookmarks' \
+  '-l+[List all bookmarks]::' \
+  '-d+[Delete a bookmark]::_read_bookmarks'
+
+_read_bookmarks && return

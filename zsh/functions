@@ -9,6 +9,40 @@ function current_db {
 
 function gem-root { ruby -rrbconfig -e 'puts "#{RbConfig::CONFIG["libdir"]}/ruby/gems/1.9.1"' }
 
+function to {
+  case "$1" in
+    -a)
+      readlink -e $2
+      dir=$(readlink -e $2)
+      [ -z $dir ] && echo "No such file or directory" || (cd $HOME/.to; ln -s $dir)
+      ;;
+    -l)
+      for i in ~/.to/*(@); do
+        printf "%-12s %s\n" "${i:t}:" $(readlink -e $i)
+      done
+      ;;
+    -p)
+      readlink -e ~/.to/$2
+      ;;
+    -d)
+      rm ~/.to/$2 2> /dev/null || echo "No such bookmark"
+      ;;
+    -*)
+      print "Unknown option"
+      ;;
+    '')
+      echo "usage: OPTIONS [bookmark]"
+      echo "  -a Add a new bookmark."
+      echo "  -d Delete a bookmark."
+      echo "  -l List all bookmarks."
+      echo "  -p Print the bookmark path."
+      ;;
+    *)
+      cd $(readlink -e ~/.to/$1)
+      ;;
+  esac
+}
+
 function cdr { cd ~/dev/rails/$1 }
 function cdd { cd ~/dev/ruby/$1 }
 function cdg { cd $(gem-root)/gems/$1 }
