@@ -12,6 +12,7 @@ function gem-root { ruby -rrbconfig -e 'puts "#{RbConfig::CONFIG["libdir"]}/ruby
 function to {
   case "$1" in
     -a)
+      [[ -f $HOME/.to ]] || mkdir $HOME/.to
       readlink -e $2
       dir=$(readlink -e $2)
       [ -z $dir ] && echo "No such file or directory" || (cd $HOME/.to; ln -s $dir)
