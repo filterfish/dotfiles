@@ -12,6 +12,7 @@
   a    = add
   c    = commit
   dd   = diff
+  ds   = diff stash@{0}~1..stash@{0}
   st   = status
   co   = checkout
   root = !pwd
@@ -20,3 +21,12 @@
   lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative --all
 [push]
 	default = simple
+[diff]
+	tool = diffuse
+[difftool]
+	prompt = false
+[merge]
+  tool = diffuse
+[mergetool]
+	prompt = false
+	tool = diffuse
