@@ -1,5 +1,6 @@
 alias ls='ls -F'
-alias ll='ls -lF'
+alias ll='ls -Fl'
+alias lt='ls -Fltr'
 alias w3m='=w3m -no-mouse'
 
 # vim:ft=zsh
