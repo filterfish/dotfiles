@@ -1,3 +1,5 @@
+export TZ=Australia/Sydney
+
 # Sort gpg & ssh keys out
 [ -f $HOME/.gpg-agent-info ] && source $HOME/.gpg-agent-info
 GPG_TTY=$(tty)
