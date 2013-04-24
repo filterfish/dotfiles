@@ -135,7 +135,7 @@ set directory=~/.vim/tmp
 " persistent undo.
 if v:version >= 703
   set undofile
-  set undodir=~/.vim-tmp
+  set undodir=~/.vim/tmp
 endif
 
 " Shorten messages
