@@ -97,7 +97,7 @@ function title {
   esac
 }
 
-function uriencode { echo $1 | ruby -rcgi -e "puts CGI.escape(\"$1\")"}
-function uridecode { echo $1 | ruby -rcgi -e "puts CGI.unescape(\"$1\")" }
+function uriencode { echo $1 | ruby -rcgi -e "puts CGI.escape(\"$*\")"}
+function uridecode { echo $1 | ruby -rcgi -e "puts CGI.unescape(\"$*\")" }
 
 # vim:ft=zsh
