@@ -3,6 +3,7 @@ alias ls='ls -F'
 alias ll='ls -Fl'
 alias lt='ls -Fltr'
 alias w3m='=w3m -no-mouse'
+alias sn='screen'
 alias agrep=tre-agrep
 
 # vim:ft=zsh
