@@ -1,6 +1,6 @@
 [user]
-  name = Richard Heycock
-  email = rgh@filterfish.org
+	name = Richard Heycock
+	email = rgh@filterfish.org
 
 [color]
   branch = auto
@@ -11,16 +11,18 @@
 [alias]
   a    = add
   c    = commit
+  ca   = commit --amend -C HEAD
   dd   = diff
   ds   = diff stash@{0}~1..stash@{0}
   st   = status
   co   = checkout
   root = !pwd
   ll   = log
-  ls   = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative
-  lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative --all
-#[push]
-#	default = simple
+  ls   = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset'
+  lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all
+  pr    = reflog --pretty=format:'%C(yellow)%h%Creset%C(cyan)%Creset %gd %gs %Cgreen(%cr)%Creset %C(white)%Creset'
+[push]
+	default = simple
 [diff]
 	tool = diffuse
 [difftool]
