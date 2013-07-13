@@ -21,8 +21,8 @@
   ls   = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset'
   lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all
   pr    = reflog --pretty=format:'%C(yellow)%h%Creset%C(cyan)%Creset %gd %gs %Cgreen(%cr)%Creset %C(white)%Creset'
-[push]
-	default = simple
+; [push]
+; 	default = simple
 [diff]
 	tool = diffuse
 [difftool]
