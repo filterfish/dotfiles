@@ -1,4 +1,4 @@
-fpath=($dotfiles/zsh/completions $dotfiles/zsh/zsh-completions/src $fpath)
+fpath=($dotfiles/zsh/completions $dotfiles/zsh/git-annex-zsh-completion $dotfiles/zsh/zsh-completions/src $fpath)
 
 autoload -U compinit
 compinit
