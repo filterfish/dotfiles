@@ -105,6 +105,9 @@ set tags=tags;
 
 set pastetoggle=<c-v>
 
+" default comment symbol
+set commentstring=#\ %s
+
 set viminfo^=!
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 
