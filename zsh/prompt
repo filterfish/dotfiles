@@ -1,6 +1,6 @@
 function set_git_root {
   local _git_root=$(gr)
-  [ -z $_git_root ] || git_root=$_git_root
+  [ -z $_git_root ] || git_root=$_git_root && t=$_git_root
 }
 
 function set_default_database {
