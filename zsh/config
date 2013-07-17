@@ -15,7 +15,7 @@ setopt hist_save_no_dups
 setopt inc_append_history
 setopt extended_history
 setopt list_types
-#setopt no_bang_hist
+setopt no_bang_hist
 
 setopt complete_in_word
 
