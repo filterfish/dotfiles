@@ -105,6 +105,9 @@ endif
 
 set pastetoggle=<c-v>
 
+" default options
+set formatoptions=tcq
+
 " default comment symbol
 set commentstring=#\ %s
 
