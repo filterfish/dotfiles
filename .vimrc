@@ -48,6 +48,9 @@ set runtimepath+=/home/rgh/.vim/speeddating
 set runtimepath+=/home/rgh/.vim/solarized
 set runtimepath+=/home/rgh/.vim/utl
 
+" This is currently conflicting with ctrl-n (save)
+" set runtimepath+=/home/rgh/.vim/yankring
+
 source /home/rgh/.vim/udev.vim
 source /home/rgh/.vim/autotag.vim
 
