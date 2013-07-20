@@ -13,7 +13,7 @@ XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME XDG_CACHE_HOME XDG_CONFIG_HOME
 
 # Let remote systems know what keyboard layout is being used.
-# # Make sure sshd_config contains 'AcceptEnv KBD_LAYOUT'
+# Make sure sshd_config contains 'AcceptEnv KBD_LAYOUT'
 KBD_LAYOUT=colemak
 
 PULSE_SERVER=localhost
@@ -23,6 +23,5 @@ export KBD_LAYOUT PULSE_SERVER
 # Set up for rbenv. Note, order is important.
 PATH=$HOME/.rbenv/shims:$PATH:$HOME/.rbenv/bin
 source $HOME/.rbenv/completions/rbenv.zsh
-rbenv rehash 2>/dev/null
 
 # vim:ft=zsh
