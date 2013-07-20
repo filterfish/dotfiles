@@ -1,6 +1,6 @@
 [user]
-	name = Richard Heycock
-	email = rgh@filterfish.org
+  name = Richard Heycock
+  email = rgh@filterfish.org
 
 [color]
   branch = auto
@@ -22,13 +22,13 @@
   lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all
   pr    = reflog --pretty=format:'%C(yellow)%h%Creset%C(cyan)%Creset %gd %gs %Cgreen(%cr)%Creset %C(white)%Creset'
 ; [push]
-; 	default = simple
+;   default = simple
 [diff]
-	tool = diffuse
+  tool = diffuse
 [difftool]
-	prompt = false
+  prompt = false
 [merge]
   tool = diffuse
 [mergetool]
-	prompt = false
-	tool = diffuse
+  prompt = false
+  tool = diffuse
