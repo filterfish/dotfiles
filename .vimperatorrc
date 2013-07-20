@@ -40,7 +40,7 @@ noremap k n
 command! fb emenu Tools.Firebug.Open Firebug
 command! vs viewsource
 
-command! google open http://www.google.com <args>
+command! ddg open http://www.duckduckgo.com <args>
 command! wiki open http://wikipedia.org <args>
 command! tw open http://twitter.com
 command! Tw tabopen http://twitter.com
