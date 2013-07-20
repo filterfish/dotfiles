@@ -46,5 +46,5 @@ command! tw open http://twitter.com
 command! Tw tabopen http://twitter.com
 command! dev open http://localhost:3000
 command! Dev tabopen http://localhost:3000
-command! gems open file:///usr/local/ruby-1.9.3-p194/lib/ruby/gems/1.9.1/doc
+command! gems open file:///usr/local/ruby-2.0.0-p195/lib/ruby/gems/2.0.0//doc
 command! pydoc open file:///usr/share/doc/python2.7/html/index.html
