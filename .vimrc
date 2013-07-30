@@ -47,6 +47,7 @@ set runtimepath+=/home/rgh/.vim/surround
 set runtimepath+=/home/rgh/.vim/speeddating
 set runtimepath+=/home/rgh/.vim/solarized
 set runtimepath+=/home/rgh/.vim/utl
+set runtimepath+=/home/rgh/.vim/coffee-script
 
 " This is currently conflicting with ctrl-n (save)
 " set runtimepath+=/home/rgh/.vim/yankring
