@@ -43,7 +43,6 @@ function to {
   esac
 }
 
-function cdr { cd ~/dev/rails/$1 }
 function cdd { cd ~/dev/ruby/$1 }
 function cdg { cd $(gem-root)/gems/$1 }
 
