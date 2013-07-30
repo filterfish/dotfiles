@@ -15,7 +15,9 @@ function set_ruby_version {
   fi
 }
 
-function set_title { title "$(basename $PWD)" }
+function set_title {
+  title "$(basename $PWD)"
+}
 
 setopt prompt_subst
 autoload -Uz vcs_info
