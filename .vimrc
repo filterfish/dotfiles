@@ -131,7 +131,7 @@ set nonumber
 set hidden
 set wildmode=list:longest,full
 
-set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim/tmp
 
 " persistent undo.
 if v:version >= 703
