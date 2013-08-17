@@ -29,13 +29,8 @@ zstyle ':vcs_info:*' enable git
 zle_highlight=(none)
 
 function preexec {
-
-  local last_arg=${(z)${=1}[-1]}
-  local command=${(z)${=1}[1]}
-
-  if [ $command = 'psql' ]; then
-    title "db:$last_arg"
-  fi
+  s=$*[1]
+  title $s
 }
 
 function precmd {
