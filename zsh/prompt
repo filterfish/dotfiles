@@ -29,8 +29,8 @@ zstyle ':vcs_info:*' enable git
 zle_highlight=(none)
 
 function preexec {
-  s=$*[1]
-  title $s
+  s=${@[2]}
+  title "$s"
 }
 
 function precmd {
