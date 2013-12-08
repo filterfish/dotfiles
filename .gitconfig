@@ -13,8 +13,10 @@
   c    = commit
   ca   = commit --amend -C HEAD
   dd   = diff
+  ddc  = diff --cached
   ds   = diff stash@{0}~1..stash@{0}
   st   = status
+  stu   = status --untracked-files=no
   co   = checkout
   root = !pwd
   ll   = log
