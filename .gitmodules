@@ -43,3 +43,6 @@
 [submodule ".vim/ctrlp"]
 	path = .vim/ctrlp
 	url = https://github.com/kien/ctrlp.vim
+[submodule ".vim/abolish"]
+	path = .vim/abolish
+	url = git://github.com/tpope/vim-abolish.git

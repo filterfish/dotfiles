@@ -49,6 +49,7 @@ set runtimepath+=/home/rgh/.vim/solarized
 set runtimepath+=/home/rgh/.vim/utl
 set runtimepath+=/home/rgh/.vim/coffee-script
 set runtimepath+=/home/rgh/.vim/ctrlp
+set runtimepath+=/home/rgh/.vim/abolish
 
 " This is currently conflicting with ctrl-n (save)
 " set runtimepath+=/home/rgh/.vim/yankring
