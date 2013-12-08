@@ -35,3 +35,5 @@
 [mergetool]
   prompt = false
   tool = diffuse
+[rerere]
+  enabled = true
