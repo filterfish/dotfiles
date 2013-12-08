@@ -46,3 +46,6 @@
 [submodule ".vim/abolish"]
 	path = .vim/abolish
 	url = git://github.com/tpope/vim-abolish.git
+[submodule ".vim/tcomment_vim"]
+	path = .vim/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
