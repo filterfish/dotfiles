@@ -58,8 +58,6 @@ function gr {
 
 function cr { cd $(gr || echo '.')/$1 }
 
-function t { $HOME/bin/t --task-dir $([ -d $git_root/.tasks ] && echo $git_root/.tasks || echo ~/doc) --list tasks }
-
 function bitly { $(whence -p bitly) -l filterfish -k R_3c48c14783d79679341ede80ae4aeee8 $@ }
 function dict  { \dictl "$@" 2>&1 | colorit | less -R }
 
