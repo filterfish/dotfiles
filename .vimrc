@@ -48,6 +48,7 @@ set runtimepath+=/home/rgh/.vim/speeddating
 set runtimepath+=/home/rgh/.vim/solarized
 set runtimepath+=/home/rgh/.vim/utl
 set runtimepath+=/home/rgh/.vim/coffee-script
+set runtimepath+=/home/rgh/.vim/ctrlp
 
 " This is currently conflicting with ctrl-n (save)
 " set runtimepath+=/home/rgh/.vim/yankring
@@ -84,6 +85,9 @@ let g:solarized_termcolors=256
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_termtrans=1
+
+
+let g:ctrlp_working_path_mode = 'cr'
 
 syntax enable
 set background=dark
