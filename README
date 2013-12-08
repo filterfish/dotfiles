@@ -3,9 +3,10 @@ directory. The zsh config has been split into multiple files to
 make it less unwieldly.
 
 git clone git@github.com:filterfish/dotfiles.git .dotfiles
+
+(cd .dotfiles; git submodule update --init)
 ls -d ~/.dotfiles/.* | grep -vw .git | xargs -n1 ln -s
 
-There are two .screenrc files: screenrc.x & .screenrc.no-x one's
-for X and one isn't, in case you hadn't worked it out! Remove one
-and rename the other if you use the fairly heavy handed sym-linking
-method above.
+For remote machines remove the following:
+
+.Xdefaults .bookmarkerrc .gtkrc.mine .vimperatorrc .screen*
