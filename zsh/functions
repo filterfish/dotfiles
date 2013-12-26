@@ -7,7 +7,7 @@ function current_db {
   fi
 }
 
-function gem-root { ruby -rrbconfig -e 'v = (RbConfig::CONFIG["MAJOR"] == "2") ? "2.0.0" : "1.9.1"; puts "#{RbConfig::CONFIG["libdir"]}/ruby/gems/#{v}"' }
+function gem-root { ruby -rrbconfig -e "RbConfig::CONFIG.tap {|c| \"#{c['MAJOR']}.#{c['MINOR']}.#{c['TEENY']}\".tap {|v| puts \"#{c['libdir']}/ruby/gems/#{v}\" } }" }
 
 function to {
   case "$1" in
