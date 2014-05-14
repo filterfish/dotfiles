@@ -2,6 +2,10 @@ function reload-history { fc -R; zle accept-line }
 
 zle -N reload-history
 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 #bindkey -M isearch "^M" accept-search
 
 bindkey -M isearch "^n" vi-repeat-search
