@@ -20,7 +20,4 @@ PULSE_SERVER=localhost
 
 export KBD_LAYOUT PULSE_SERVER
 
-PATH=$HOME/.rbenv/shims:$PATH:$HOME/.rbenv/bin
-source $HOME/.rbenv/completions/rbenv.zsh
-
 # vim:ft=zsh
