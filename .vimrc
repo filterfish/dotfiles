@@ -1,29 +1,30 @@
 " Change the leader from \ to ,
 let mapleader = ","
 
-noremap n j|noremap <C-w>n <C-w>j
-noremap e k|noremap <C-w>e <C-w>k
-noremap N J|noremap <C-w>N <C-w>J
-noremap s h|noremap <C-w>s <C-w>h
-noremap S H|noremap <C-w>S <C-w>H
-noremap t l|noremap <C-w>t <C-w>l
-noremap T L|noremap <C-w>T <C-w>L
+if $KBD_LAYOUT == 'colemak'
+  noremap n j|noremap <C-w>n <C-w>j
+  noremap e k|noremap <C-w>e <C-w>k
+  noremap N J|noremap <C-w>N <C-w>J
+  noremap s h|noremap <C-w>s <C-w>h
+  noremap S H|noremap <C-w>S <C-w>H
+  noremap t l|noremap <C-w>t <C-w>l
+  noremap T L|noremap <C-w>T <C-w>L
 
-noremap h s|noremap <C-w>h <C-w>s
-noremap f e|noremap <C-w>f <C-w>e
-noremap F E|noremap <C-w>F <C-w>E
-noremap k n|noremap <C-w>k <C-w>n
-noremap K N|noremap <C-w>K <C-w>N
+  noremap h s|noremap <C-w>h <C-w>s
+  noremap f e|noremap <C-w>f <C-w>e
+  noremap F E|noremap <C-w>F <C-w>E
+  noremap k n|noremap <C-w>k <C-w>n
+  noremap K N|noremap <C-w>K <C-w>N
 
-noremap j f|noremap <C-w>j <C-w>f
-noremap J F|noremap <C-w>J <C-w>F
-noremap l t|noremap <C-w>l <C-w>t
-noremap L T|noremap <C-w>L <C-w>T
+  noremap j f|noremap <C-w>j <C-w>f
+  noremap J F|noremap <C-w>J <C-w>F
+  noremap l t|noremap <C-w>l <C-w>t
+  noremap L T|noremap <C-w>L <C-w>T
 
-"L & H is remaped to S & T so unmap L & H
-nnoremap L <Nop>
-nnoremap H <Nop>
-
+  "L & H is remaped to S & T so unmap L & H
+  nnoremap L <Nop>
+  nnoremap H <Nop>
+endif
 "Remap ctrl-n to be save. :w<cr> is not helping my rsi!
 nnoremap <C-n> :w<cr>
 
