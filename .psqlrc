@@ -1,4 +1,4 @@
-\pset null 'NULL'
+\pset null '∅'
 \set HISTFILE ~/.psql_history. :DBNAME
 \set HISTSIZE 6000
 \set HISTCONTROL ignoreboth
