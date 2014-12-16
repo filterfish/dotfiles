@@ -14,7 +14,7 @@
   c    = commit
   ca   = commit --amend -C HEAD
   dd   = diff
-  ddc  = diff --cached
+  ddi  = diff --cached
   dds  = diff --stat
   ds   = diff stash@{0}~1..stash@{0}
   st   = status
@@ -28,14 +28,19 @@
 [push]
   default = simple
 [diff]
-  tool = diffuse
+  tool = meld
   algorithm = patience
 [difftool]
   prompt = false
 [merge]
-  tool = diffuse
+  tool = meld
+  algorithm = patience
+	ff-only = true
 [mergetool]
   prompt = false
-  tool = diffuse
+  tool = meld
+  algorithm = patience
 [rerere]
   enabled = true
+[core]
+  pager = less -+S
