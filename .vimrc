@@ -39,18 +39,49 @@ set spelllang=en_gb
 "set spell
 
 " set the various plugin paths
-set runtimepath+=/home/rgh/.vim/gnupg
-set runtimepath+=/home/rgh/.vim/tcomment_vim
-set runtimepath+=/home/rgh/.vim/gundo
-set runtimepath+=/home/rgh/.vim/puppet
-set runtimepath+=/home/rgh/.vim/repeat
-set runtimepath+=/home/rgh/.vim/surround
-set runtimepath+=/home/rgh/.vim/speeddating
-set runtimepath+=/home/rgh/.vim/solarized
-set runtimepath+=/home/rgh/.vim/utl
-set runtimepath+=/home/rgh/.vim/coffee-script
-set runtimepath+=/home/rgh/.vim/ctrlp
-set runtimepath+=/home/rgh/.vim/abolish
+
+set runtimepath+=/home/rgh/.vim/bundle/neobundle.vim
+
+" Let NeoBundle manage NeoBundle
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc' ", { 'build' : { 'linux' : 'make -f make_unix.mak' } }
+
+NeoBundle 'vim-scripts/SQLUtilities'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'craigemery/vim-autotag'
+
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-repeat'
+
+NeoBundle 'jamessan/vim-gnupg'
+NeoBundle 'cespare/vim-toml'
+
+" NeoBundle 'tpope/vim-fugitive.vim'
+" NeoBundle 'kien/ctrlp.vim'
+" NeoBundle 'flazz/vim-colorschemes'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+" Prompt for uninstalled bundles found at startup
+NeoBundleCheck
+
+" set runtimepath+=/home/rgh/.vim/puppet
+" set runtimepath+=/home/rgh/.vim/utl
 
 " This is currently conflicting with ctrl-n (save)
 " set runtimepath+=/home/rgh/.vim/yankring
