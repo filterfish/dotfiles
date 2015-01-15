@@ -11,4 +11,8 @@
 -- Returns the approximate count of all tables. Relies on vacuum analyse.
 \set approx 'SELECT relname, n_live_tup, n_dead_tup, n_tup_ins, n_tup_del, n_tup_hot_upd, idx_tup_fetch, n_tup_upd, idx_scan, last_autovacuum FROM pg_stat_user_tables ORDER BY relname;'
 
+\set columns 'select column_name from information_schema.columns where table_name ='
+
+\set tables 'select table_name from information_schema.tables where table_schema = '
+
 -- vim: ft=sql
