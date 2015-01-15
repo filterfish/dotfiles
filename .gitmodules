@@ -7,27 +7,12 @@
 [submodule ".vim/commentary"]
 	path = .vim/commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule ".vim/surround"]
-	path = .vim/surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule ".vim/orgmode"]
-	path = .vim/orgmode
-	url = git://github.com/jceb/vim-orgmode.git
-[submodule ".vim/utl"]
-	path = .vim/utl
-	url = git://github.com/vim-scripts/utl.vim.git
 [submodule ".vim/speeddating"]
 	path = .vim/speeddating
 	url = git://github.com/tpope/vim-speeddating.git
 [submodule ".vim/gundo"]
 	path = .vim/gundo
 	url = http://github.com/sjl/gundo.vim.git
-[submodule ".vim/vim-orgmode"]
-	path = .vim/vim-orgmode
-	url = git://github.com/jceb/vim-orgmode.git
-[submodule ".vim/yankring"]
-	path = .vim/yankring
-	url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule "dbext.vim"]
 	path = dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim
@@ -40,12 +25,6 @@
 [submodule ".vim/coffee-script"]
 	path = .vim/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
-[submodule ".vim/ctrlp"]
-	path = .vim/ctrlp
-	url = https://github.com/kien/ctrlp.vim
-[submodule ".vim/abolish"]
-	path = .vim/abolish
-	url = git://github.com/tpope/vim-abolish.git
-[submodule ".vim/tcomment_vim"]
-	path = .vim/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim
+[submodule ".vim/bundle/neobundle"]
+	path = .vim/bundle/neobundle
+	url = https://github.com/Shougo/neobundle.vim
