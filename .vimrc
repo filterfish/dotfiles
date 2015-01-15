@@ -40,7 +40,7 @@ set spelllang=en_gb
 
 " set the various plugin paths
 
-set runtimepath+=/home/rgh/.vim/bundle/neobundle.vim
+set runtimepath+=/home/rgh/.vim/bundle/neobundle
 
 " Let NeoBundle manage NeoBundle
 call neobundle#begin(expand('~/.vim/bundle/'))
