@@ -16,7 +16,7 @@
   dd   = diff
   ddi  = diff --cached
   dds  = diff --stat
-  ds   = diff stash@{0}~1..stash@{0}
+  ds   = "!f() { n=${1:-0}; git diff stash@{$n}~1..stash@{$n}; }; f"
   st   = status
   stu  = status --untracked-files=no
   co   = checkout
