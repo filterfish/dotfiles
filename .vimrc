@@ -1,6 +1,8 @@
 " Change the leader from \ to ,
 let mapleader = ","
 
+set nocompatible
+
 if $KBD_LAYOUT == 'colemak'
   noremap n j|noremap <C-w>n <C-w>j
   noremap e k|noremap <C-w>e <C-w>k
@@ -25,6 +27,7 @@ if $KBD_LAYOUT == 'colemak'
   nnoremap L <Nop>
   nnoremap H <Nop>
 endif
+
 "Remap ctrl-n to be save. :w<cr> is not helping my rsi!
 nnoremap <C-n> :w<cr>
 
@@ -40,7 +43,10 @@ set spelllang=en_gb
 
 " set the various plugin paths
 
-set runtimepath+=/home/rgh/.vim/bundle/neobundle
+let $BUNDLE_PATH=expand("$HOME/.vim/bundle/neobundle")
+set runtimepath+=$BUNDLE_PATH
+
+call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 call neobundle#begin(expand('~/.vim/bundle/'))
