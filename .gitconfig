@@ -10,11 +10,29 @@
 
 [alias]
   a    = add
+  ap   = add --patch
   c    = commit
+  ca   = commit --amend -C HEAD
   dd   = diff
+  ddi  = diff --cached
+  dds  = diff --stat
+  ds   = "!f() { n=${1:-0}; git diff stash@{$n}~1..stash@{$n}; }; f"
   st   = status
+  stu  = status --untracked-files=no
   co   = checkout
   root = !pwd
   ll   = log
-  ls   = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative
-  lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --abbrev-commit --date=relative --all
+  ls   = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset'
+  lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all
+  pr    = reflog --pretty=format:'%C(yellow)%h%Creset%C(cyan)%Creset %gd %gs %Cgreen(%cr)%Creset %C(white)%Creset'
+[push]
+  default = simple
+[diff]
+  algorithm = patience
+[merge]
+  algorithm = patience
+	ff-only = true
+[rerere]
+  enabled = true
+[core]
+  pager = /usr/bin/less -+S
