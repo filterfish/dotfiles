@@ -51,6 +51,8 @@ NeoBundle 'Shougo/vimproc' ", { 'build' : { 'linux' : 'make -f make_unix.mak' } 
 
 NeoBundle 'altercation/vim-colors-solarized'
 
+NeoBundle 'Kris2k/matchit'
+
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
@@ -110,7 +112,7 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-runtime macros/matchit.vim
+"runtime macros/matchit.vim
 
 :nohlsearch
 
