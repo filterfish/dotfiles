@@ -59,14 +59,14 @@ NeoBundle 'Shougo/vimproc' ", { 'build' : { 'linux' : 'make -f make_unix.mak' } 
 
 NeoBundle 'vim-scripts/SQLUtilities'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'elixir-lang/vim-elixir'
+
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'craigemery/vim-autotag'
 
-NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'Kris2k/matchit'
+
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-speeddating'
@@ -86,7 +86,7 @@ filetype plugin indent on
 " Prompt for uninstalled bundles found at startup
 NeoBundleCheck
 
-" set runtimepath+=/home/rgh/.vim/puppet
+set runtimepath+=/home/rgh/.vim/puppet
 " set runtimepath+=/home/rgh/.vim/utl
 
 " This is currently conflicting with ctrl-n (save)
@@ -132,8 +132,7 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-
-runtime macros/matchit.vim
+"runtime macros/matchit.vim
 
 :nohlsearch
 
