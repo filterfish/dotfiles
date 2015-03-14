@@ -67,10 +67,11 @@ NeoBundle 'craigemery/vim-autotag'
 
 NeoBundle 'Kris2k/matchit'
 
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-surround'
 
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'cespare/vim-toml'
