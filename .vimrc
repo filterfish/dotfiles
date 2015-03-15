@@ -158,6 +158,9 @@ set formatoptions=tcq
 " default comment symbol
 set commentstring=#\ %s
 
+" sql comment string
+autocmd FileType sql set commentstring=--\ %s
+
 set viminfo^=!
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 
