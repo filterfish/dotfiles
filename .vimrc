@@ -51,11 +51,16 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " Let NeoBundle manage NeoBundle
 call neobundle#begin(expand('~/.vim/bundle/'))
 
+NeoBundle 'Shougo/vimproc', {
+\ 'build' : {
+\   'linux' : 'make -f make_unix.mak'
+\   }
+\ }
+
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc' ", { 'build' : { 'linux' : 'make -f make_unix.mak' } }
 
 NeoBundle 'vim-scripts/SQLUtilities'
 NeoBundle 'kchmck/vim-coffee-script'
