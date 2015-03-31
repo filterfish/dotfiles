@@ -15,4 +15,6 @@
 
 \set tables 'select table_name from information_schema.tables where table_schema = '
 
+\set ptables 'select table_name from information_schema.tables where table_schema = ''public'';'
+
 -- vim: ft=sql
