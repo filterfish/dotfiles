@@ -80,6 +80,7 @@ NeoBundle 'tpope/vim-surround'
 
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'cespare/vim-toml'
+NeoBundle 'rodjek/vim-puppet'
 
 " NeoBundle 'tpope/vim-fugitive.vim'
 " NeoBundle 'kien/ctrlp.vim'
@@ -92,8 +93,7 @@ filetype plugin indent on
 " Prompt for uninstalled bundles found at startup
 NeoBundleCheck
 
-set runtimepath+=/home/rgh/.vim/puppet
-" set runtimepath+=/home/rgh/.vim/utl
+" set runtimepath+=/home/rgh/.vim/puppet
 
 " This is currently conflicting with ctrl-n (save)
 " set runtimepath+=/home/rgh/.vim/yankring
