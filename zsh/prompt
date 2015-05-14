@@ -41,6 +41,10 @@ function precmd {
   set_default_database
 }
 
-PROMPT=$'%m:%/%{\e[0;37m%}${ruby_version}%{\e[0;36m%}${vcs_info_msg_0_}%{\e[0m%} '
+if [[ $TERM = 'rxvt-unicode-256color' ]]; then
+  PROMPT=$'%m:%/%{\e[0;32m%}${ruby_version}%{\e[0;36m%}${vcs_info_msg_0_}%{\e[0m%} '
+else
+  PROMPT=$'%m:%/%{\e[0;37m%}${ruby_version}%{\e[0;36m%}${vcs_info_msg_0_}%{\e[0m%} '
+fi
 
 # vim:ft=zsh
