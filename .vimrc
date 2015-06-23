@@ -47,7 +47,11 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc' ", { 'build' : { 'linux' : 'make -f make_unix.mak' } }
+NeoBundle 'Shougo/vimproc', {
+\ 'build' : {
+\   'linux' : 'make -f make_unix.mak'
+\   }
+\ }
 
 NeoBundle 'altercation/vim-colors-solarized'
 
