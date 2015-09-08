@@ -42,11 +42,8 @@ set spelllang=en_gb
 "set spell
 
 " set the various plugin paths
-
 let $BUNDLE_PATH=expand("$HOME/.vim/bundle/neobundle")
 set runtimepath+=$BUNDLE_PATH
-
-call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -66,24 +63,36 @@ NeoBundle 'vim-scripts/SQLUtilities'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'elixir-lang/vim-elixir'
 
-NeoBundle 'sjl/gundo.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'craigemery/vim-autotag'
 
 NeoBundle 'Kris2k/matchit'
+
+NeoBundle 'ctrlpvim/ctrlp.vim'
+
+NeoBundle 'bling/vim-airline'
+NeoBundle 'bling/vim-bufferline'
+
+
+NeoBundle 'noprompt/vim-yardoc'
 
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-markdown'
 
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'rodjek/vim-puppet'
 
+NeoBundle 'mtth/scratch.vim'
+NeoBundle 'mbbill/undotree'
+NeoBundle 'edkolev/tmuxline.vim'
+
+
 " NeoBundle 'tpope/vim-fugitive.vim'
-" NeoBundle 'kien/ctrlp.vim'
 " NeoBundle 'flazz/vim-colorschemes'
 
 call neobundle#end()
