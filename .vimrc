@@ -112,7 +112,7 @@ source /home/rgh/.vim/autotag.vim
 
 nnoremap <leader>s :%s/\s\+$//<cr>:let @/=''<cr>
 nnoremap <leader>w :set nowrap!<cr>
-nnoremap <leader>m :GundoToggle<cr>
+nnoremap <leader>m :UndotreeToggle<cr>
 nnoremap <leader>r :set filetype=ruby<cr>
 
 syntax enable
