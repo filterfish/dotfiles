@@ -1,30 +1,9 @@
-[submodule ".vim/solarized"]
-	path = .vim/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/repeat"]
-	path = .vim/repeat
-	url = git://github.com/tpope/vim-repeat.git
-[submodule ".vim/commentary"]
-	path = .vim/commentary
-	url = git://github.com/tpope/vim-commentary.git
-[submodule ".vim/speeddating"]
-	path = .vim/speeddating
-	url = git://github.com/tpope/vim-speeddating.git
-[submodule ".vim/gundo"]
-	path = .vim/gundo
-	url = http://github.com/sjl/gundo.vim.git
-[submodule "dbext.vim"]
-	path = dbext.vim
-	url = https://github.com/vim-scripts/dbext.vim
 [submodule "zsh/zsh-completions"]
 	path = zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "zsh/git-annex-zsh-completion"]
 	path = zsh/git-annex-zsh-completion
 	url = https://github.com/esc/git-annex-zsh-completion
-[submodule ".vim/coffee-script"]
-	path = .vim/coffee-script
-	url = https://github.com/kchmck/vim-coffee-script
 [submodule ".vim/bundle/neobundle"]
 	path = .vim/bundle/neobundle
 	url = https://github.com/Shougo/neobundle.vim
