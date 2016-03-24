@@ -93,6 +93,7 @@ NeoBundle 'mtth/scratch.vim'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'edkolev/tmuxline.vim'
 
+NeoBundle 'airblade/vim-gitgutter'
 
 " NeoBundle 'tpope/vim-fugitive.vim'
 " NeoBundle 'flazz/vim-colorschemes'
@@ -262,3 +263,18 @@ let g:airline_mode_map = {
       \ 'S'  : 'S',
       \ '^S' : 'S',
      \ }
+
+"##########################################################################
+"########################  Gitgutter configuration  #######################
+"##########################################################################
+
+
+highlight SignColumn ctermbg=black
+
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_map_keys = 0
+let g:gitgutter_enabled = 1
+let g:gitgutter_signs = 0
+
+nnoremap <leader>d :GitGutterSignsToggle<CR>
