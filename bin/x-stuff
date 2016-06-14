@@ -1,0 +1,39 @@
+xmodmap $HOME/.Xmodmap
+xmodmap $HOME/incoming/colemak-1.0/xmodmap/xmodmap.colemak
+
+xrdb $HOME/.Xdefaults
+
+# Make caps lock double as control and escape. See https://github.com/alols/xcape
+# I should be able to do this in one go but it doesn't seem to work.
+sh -c "pkill xcape && sleep 1; xcape -t 200 -e 'Control_L=Escape;Shift_L=Return'" &
+
+# Disable the fucking retarded touchpad
+xinput set-prop 11 "Device Enabled" 0
+
+# Sort out the trackpoint, the second line horizontal/vertical scrolling
+# Taken from: http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint#Configuration_using_the_X_server_.28xorg.conf.29
+
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop --format=8 "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+
+# Womble's config
+# xinput set-button-map "Kensington Kensington Slimblade Trackball" 2 1 3 4 5 6 7 8
+xinput set-button-map "Kensington Kensington Slimblade Trackball" 3 0 2 5 4 0 0 1
+
+# YJ Park's config. http://yjpark.blogspot.com.au/2010/04/using-trackball-on-linux.html
+xinput set-prop --format=8 "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emulation" 1
+xinput set-prop --format=8 "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emulation Button" 1
+xinput set-prop --format=8 "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emulation Axes" 6, 7, 4, 5
+xinput set-button-map "Kensington Kensington Slimblade Trackball" 1 2 3 4 5 6 7 10 9 8 11 12
+
+# This should work but doesn't. See below.
+# xinput set-prop --format=8 "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emulation Button Toggle" 1
+
+# --format=8 doesn't work here so using the deprecated form.
+xinput set-int-prop "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emulation Button Toggle" 8 1
+
+wait
+
+# vim: ft=zsh
