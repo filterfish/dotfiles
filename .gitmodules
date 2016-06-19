@@ -7,3 +7,9 @@
 [submodule ".vim/bundle/neobundle"]
 	path = .vim/bundle/neobundle
 	url = https://github.com/Shougo/neobundle.vim
+[submodule "solarized/mutt"]
+	path = solarized/mutt
+	url = https://github.com/altercation/mutt-colors-solarized
+[submodule "solarized/tmux"]
+	path = solarized/tmux
+	url = https://github.com/seebi/tmux-colors-solarized
