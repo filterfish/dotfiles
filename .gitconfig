@@ -16,7 +16,8 @@
   dd   = diff
   ddi  = diff --cached
   dds  = diff --stat
-  ds   = "!f() { n=${1:-0}; git diff stash@{$n}~1..stash@{$n}; }; f"
+  ds   = "!f() { n=${1:-0}; [ $(git stash list | wc -l) -gt 0 ] && git diff stash@{$n}~1..stash@{$n}; }; f"
+  dss  = "!f() { n=${1:-0}; [ $(git stash list | wc -l) -gt 0 ] && git diff --stat stash@{$n}~1..stash@{$n}; }; f"
   st   = status
   stu  = status --untracked-files=no
   co   = checkout
