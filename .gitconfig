@@ -45,3 +45,5 @@
   enabled = true
 [core]
   pager = less -+S
+[pull]
+  rebase = true
