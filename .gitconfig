@@ -36,7 +36,7 @@
 [merge]
   tool = meld
   algorithm = patience
-	ff-only = true
+  ff-only = true
 [mergetool]
   prompt = false
   tool = meld
