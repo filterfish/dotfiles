@@ -41,10 +41,31 @@ function precmd {
   set_default_database
 }
 
-if [[ $TERM = 'rxvt-unicode-256color' ]]; then
-  PROMPT=$'%m:%/%{\e[0;32m%}${ruby_version}%{\e[0;36m%}${vcs_info_msg_0_}%{\e[0m%} '
-else
-  PROMPT=$'%m:%/%{\e[0;37m%}${ruby_version}%{\e[0;36m%}${vcs_info_msg_0_}%{\e[0m%} '
-fi
+# preexec_functions+=("set_title")
+
+autoload colors zsh/terminfo
+
+[[ "$terminfo[colors]" -gt 8 ]] && colors
+
+for colour in red green yellow green cyan magenta white black; do
+  eval pr_$colour='%{$fg[${colour}]%}'
+done
+
+pr_reset="%{$reset_color%}"
+
+function set_prompt() {
+  if online; then
+    print "%m:%/${pr_cyan}${vcs_info_msg_0_}${pr_reset}"
+  else
+    print "${pr_red}%m:%/${pr_reset}${pr_cyan}${vcs_info_msg_0_}${pr_reset}"
+  fi
+}
+
+function set_rprompt() {
+  print "${pr_cyan}[%D{%H:%M:%S}]${pr_reset}"
+}
+
+PROMPT=$'$(set_prompt) '
+RPROMPT="${pr_cyan}[%D{%H:%M:%S}]${pr_reset}"
 
 # vim:ft=zsh
