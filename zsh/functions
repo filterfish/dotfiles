@@ -63,6 +63,7 @@ function dict  { \dictl "$@" 2>&1 | colorit | less -R }
 
 function mpc { /usr/bin/mpc -f "[[[%artist%/]%album% - ]]%title%]|[%file%]" $@ }
 
+function online { [[ $(cat /sys/class/power_supply/AC/online) -eq 1 ]] }
 
 function env { /usr/bin/env | sort }
 function setTitle { echo -n "]2;$1^G" }
