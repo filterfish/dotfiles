@@ -87,15 +87,32 @@ function gemdoc {
 function title {
   case "$TERM" in
     screen*)
-      print -Pn "\033k\033\134\033k$1\033\134"
+      print -Pn  "\033k\033\134\033k"
+      print -rPn "$1"
+      print -Pn  "\033\134"
       ;;
     xterm*)
-      print -Pn "\e]0;%n@%m: $*\a"
+      print -Pn "\e]0;%m: "
+      print -rn "$1"
+      print -Pn "\a"
       ;;
+    rxvt*)
+      print -Pn "\e]2;$1\a"
   esac
 }
 
 function uriencode () { ruby -rcgi -e "puts CGI.escape(ARGV[0])" $1 }
 function uridecode { ruby -rcgi -e "puts CGI.unescape(ARGV[0])" $1 }
+
+# Don't save certain commands to the history
+# See: http://www.zsh.org/mla/users/2006/msg01028.html for details
+# This relies on the "hist_ignore_space" option being set (it is already)
+function histfilter-accept-line {
+  case ${${(z)BUFFER}} in
+  (git reset --hard | rm -r)
+    BUFFER=" $BUFFER" ;;
+  esac
+  zle .accept-line
+}
 
 # vim:ft=zsh
