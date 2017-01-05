@@ -1,4 +1,4 @@
-# Code from Mikael Magnusson: http://www.zsh.org/mla/users/2011/msg00367.html
+# Code modified from Mikael Magnusson: http://www.zsh.org/mla/users/2011/msg00367.html
 
 # create a new keymap to use while pasting
 bindkey -N paste
@@ -6,13 +6,12 @@ bindkey -N paste
 # make everything in this keymap call our custom widget
 bindkey -R -M paste "^@"-"\M-^?" paste-insert
 
-# these are the codes sent around the pasted text in bracketed
-# paste mode.
+# These are the codes sent around the pasted text in bracketed # paste mode.
 # do the first one with both -M viins and -M vicmd in vi mode
 bindkey '^[[200~' _start_paste
 bindkey -M paste '^[[201~' _end_paste
 
-# insert newlines rather than carriage returns when pasting newlines
+# Insert newlines rather than carriage returns when pasting newlines
 bindkey -M paste -s '^M' '^J'
 
 zle -N _start_paste
@@ -29,18 +28,9 @@ function _start_paste() {
 # Go back to our normal keymap, & insert the pasted text. this has the nice
 # effect of making the whole paste be a single undo/redo event.
 function _end_paste() {
-  set -x
-  # Use bindkey -v here with vi mode probably. Maybe you want to track if you
-  # were in ins or cmd mode and restore the right one.
-  bindkey -rpM viins '\e'
   bindkey -v
-
-  function zle-line-init { zle -K vicmd; }
-  zle -N zle-line-init
-
   LBUFFER+=$_paste_content
   unset _paste_content
-  set +x
 }
 
 function _paste_insert() {
@@ -50,6 +40,9 @@ function _paste_insert() {
 function _zle_line_init() {
   # Tell terminal to send escape codes around pastes.
   [[ $TERM == rxvt-unicode-256color || $TERM == rxvt-unicode || $TERM == xterm || $TERM = xterm-256color || $TERM = screen || $TERM = screen-256color ]] && printf '\e[?2004h'
+
+  # Set the keymay to vi command mode.
+  zle -K vicmd
 }
 
 function _zle_line_finish() {

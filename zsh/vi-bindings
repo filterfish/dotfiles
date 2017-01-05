@@ -3,7 +3,7 @@ KEYTIMEOUT=1
 bindkey -rpM viins '\e'
 bindkey -v
 
-function zle-line-init { zle -K vicmd; }
-zle -N zle-line-init
+# function zle-line-init { zle -K vicmd; }
+# zle -N zle-line-init
 
 # vim:ft=zsh

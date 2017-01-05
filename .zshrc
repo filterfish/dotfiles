@@ -7,6 +7,8 @@ if [ "$PS1" ] ; then
   source_if_exists $dotfiles/zsh/term
   source_if_exists $dotfiles/zsh/config
   source_if_exists $dotfiles/zsh/vi-bindings
+  source_if_exists $dotfiles/zsh/bracketed-paste
+
   source_if_exists $dotfiles/zsh/key-bindings
   source_if_exists $dotfiles/zsh/prompt
   source_if_exists $dotfiles/zsh/aliases
