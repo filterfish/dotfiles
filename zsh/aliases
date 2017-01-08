@@ -1,5 +1,5 @@
 alias bc='bc -q'
-alias ls='ls -F'
+alias ls='ls --time-style=long-iso -F --color=auto'
 alias ll='ls -Fl'
 alias lt='ls -Fltr'
 alias w3m='=w3m -no-mouse'
