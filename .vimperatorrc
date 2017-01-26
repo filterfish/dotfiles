@@ -1,44 +1,51 @@
-set editor='$HOME/bin/vimperator-editor'
+set editor='/home/rgh/bin/vimperator-editor'
 
 set defsearch='duckduckgo'
 set complete='l'
-set showstatuslinks=2
 
-set tabnumbers
-set animations
-set noscrollbars
+set guioptions=s
 
-noremap <C-p> <none>
-noremap <C-n> <none>
-noremap <C-o> <none>
-noremap <C-i> <none>
+map <C-p> <none>
+map <C-n> <none>
+map <C-o> <none>
+map <C-i> <none>
 
 "up/down on the page
-noremap n j
-noremap e k
+map -builtin n j
+map -builtin e k
 
 "left/right on the page
-noremap s h
-noremap t l
+map -builtin s h
+map -builtin t l
 
 "forward & backward in the history stack
-noremap S H
-noremap T L
+map -builtin S H
+map -builtin T L
 
 "create new tabs
-noremap h t
-noremap H T
+map -builtin h t
+map -builtin H T
 
 "cycle througth tabs
-noremap E gT
-noremap N gt
+map -builtin E gT
+map -builtin N gt
+
+nmap -builtin <C-t> tabmove -1
+" map -builtin <C-e> tabmove! +1<cr>
 
 "re-search
-noremap K N
-noremap k n
+map -builtin K N
+map -builtin k n
+
+" :command-nargs=*ddgopen ddg <args>
+
+colorscheme solarized-dark
 
 command! fb emenu Tools.Firebug.Open Firebug
 command! vs viewsource
+
+command! hoo -nargs=* -complete search open http://hayoo.fh-wedel.de/?query=<args>
+command! qoo -nargs=* -complete search open "http://hackage.haskell.org/packages/search?terms=<args>"
 
 command! ddg open http://www.duckduckgo.com <args>
 command! wiki open http://wikipedia.org <args>
@@ -46,5 +53,14 @@ command! tw open http://twitter.com
 command! Tw tabopen http://twitter.com
 command! dev open http://localhost:3000
 command! Dev tabopen http://localhost:3000
-command! gems open file:///usr/local/ruby-2.0.0-p195/lib/ruby/gems/2.0.0//doc
+command! gems open file:///home/rgh/.gem/ruby/2.2.0/doc
+command! Gems tagopen file:///usr/local/ruby-2.1.0/lib/ruby/gems/2.1.0/doc
 command! pydoc open file:///usr/share/doc/python2.7/html/index.html
+
+command! phw open https://phabricator.digivizer.com/w
+command! phd open https://phabricator.digivizer.com/differential/
+command! phpj open https://phabricator.digivizer.com/project/
+command! phm open https://phabricator.digivizer.com/maniphest/
+command! php open https://phabricator.digivizer.com/paste/
+
+" vim: ft=vim
