@@ -49,10 +49,10 @@ command! qoo -nargs=* -complete search open "http://hackage.haskell.org/packages
 
 command! ddg open http://www.duckduckgo.com <args>
 
-command! phw open https://phabricator.digivizer.com/w
-command! phd open https://phabricator.digivizer.com/differential/
-command! phpj open https://phabricator.digivizer.com/project/
-command! phm open https://phabricator.digivizer.com/maniphest/
-command! php open https://phabricator.digivizer.com/paste/
+command! phw open https://phabricator.filterfish.org/w
+command! phd open https://phabricator.filterfish.org/differential/
+command! phpj open https://phabricator.filterfish.org/project/
+command! phm open https://phabricator.filterfish.org/maniphest/
+command! php open https://phabricator.filterfish.org/paste/
 
 " vim: ft=vim
