@@ -54,18 +54,21 @@ done
 pr_reset="%{$reset_color%}"
 
 function set_prompt() {
-  if online; then
-    print "%m:%/${pr_cyan}${vcs_info_msg_0_}${pr_reset}"
-  else
-    print "${pr_red}%m:%/${pr_reset}${pr_cyan}${vcs_info_msg_0_}${pr_reset}"
-  fi
+  local lp="%m:%/${pr_cyan}${vcs_info_msg_0_}${pr_reset}"
+  print "$lp"
 }
 
 function set_rprompt() {
-  print "${pr_cyan}[%D{%H:%M:%S}]${pr_reset}"
+  local rp="[%D{%H:%M:%S}]"
+
+  if online; then
+    print "${pr_cyan}${rp}${pr_reset}"
+  else
+    print "${pr_red}${rp}${pr_reset}"
+  fi
 }
 
 PROMPT=$'$(set_prompt) '
-RPROMPT="${pr_cyan}[%D{%H:%M:%S}]${pr_reset}"
+RPROMPT=$'$(set_rprompt)'
 
 # vim:ft=zsh
