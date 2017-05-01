@@ -4,8 +4,12 @@ make it less unwieldly.
 
 git clone git@github.com:filterfish/dotfiles.git .dotfiles
 
+or
+
+git clone https://github.com/filterfish/dotfiles.git .dotfiles
+
 (cd .dotfiles; git submodule update --init)
-ls -d ~/.dotfiles/.* | grep -vw .git | xargs -n1 ln -s
+ls -d ~/.dotfiles/.* | grep -vw .git | xargs -n1 ln -sf
 
 For remote machines remove the following:
 
