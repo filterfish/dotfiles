@@ -1,6 +1,6 @@
 include "/usr/share/themes/ClearlooksClassic/gtk-2.0/gtkrc"
 
-gtk-toolbar-style = GTK_TOOLBAR_ICONS 
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
 gtk-key-theme-name = "Emacs"
 
 # un-comment this to be able to change keybindings from the app.
