@@ -97,6 +97,8 @@ NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'scrooloose/syntastic'
 
+NeoBundle 'craigemery/vim-autotag'
+
 " NeoBundle 'tpope/vim-fugitive.vim'
 " NeoBundle 'flazz/vim-colorschemes'
 
@@ -296,3 +298,15 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_mri_exec = 'ruby'
+
+"########################################################################
+"############################   vim-autotag  ############################
+"########################################################################
+
+autocmd BufWritePost haskell let g:autotagCtagsCmd="fast-tags"
+autocmd BufWritePost elm let g:autotagCtagsCmd="ctags"
+
+set tags=tags;
+
+" For vim/ctags to recognise methods with a ?
+set iskeyword+=?
