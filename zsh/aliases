@@ -1,9 +1,11 @@
+alias t=to
 alias bc='bc -q'
 alias ls='ls --time-style=long-iso -F --color=auto'
 alias ll='ls -Fl'
 alias lt='ls -Fltr'
 alias w3m='=w3m -no-mouse'
-alias sn='screen'
-alias agrep=tre-agrep
+
+alias hi='hoogle --info'
+alias ho='hoogle'
 
 # vim:ft=zsh
