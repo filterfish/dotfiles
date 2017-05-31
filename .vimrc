@@ -90,6 +90,7 @@ nnoremap <leader>s :%s/\s\+$//<cr>:let @/=''<cr>
 nnoremap <leader>w :set nowrap!<cr>
 nnoremap <leader>m :GundoToggle<cr>
 nnoremap <leader>r :set filetype=ruby<cr>
+nnoremap <leader>. :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR>
 
 syntax enable
 syntax sync fromstart
