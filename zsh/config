@@ -53,6 +53,17 @@ export SCREENRC=$HOME/.screenrc
 
 export PS_FORMAT="pid,ppid,state,user,group,rss,c,cputime,cmd"
 
+
+# Fix the unreadable man page colourisation
+#
+export LESS_TERMCAP_mb=$(printf "\e[1;31m")
+export LESS_TERMCAP_md=$(printf "\e[0;37m")
+export LESS_TERMCAP_me=$(printf "\e[0m")
+export LESS_TERMCAP_se=$(printf "\e[0m")
+export LESS_TERMCAP_so=$(printf "\e[0;40;38m")
+export LESS_TERMCAP_ue=$(printf "\e[0m")
+export LESS_TERMCAP_us=$(printf "\e[4;36m")
+
 # collation = A-Za-z
 export LC_COLLATE=C
 
