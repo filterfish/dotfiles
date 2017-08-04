@@ -4,22 +4,27 @@
 \set HISTCONTROL ignoreboth
 \timing
 
--- Print the running queries
-\set queries 'select pid as PID, datname as DB, usename as User, application_name as Application, waiting as "Waiting", query as Query from pg_stat_activity where state = ''active'' and query not like ''%from pg_stat_activity%'';'
+-- Show what queries are running
+-- usage: :queries;
+\set queries 'select pid as PID, datname as DB, usename as User, application_name as Application, waiting as "Waiting", query as Query from pg_stat_activity where state = ''active'' and query not like ''%from pg_stat_activity%'''
 
--- Prints the approximate count of all tables. Relies on vacuum analyse.
-\set approx 'select relname, n_live_tup, n_dead_tup, n_tup_ins, n_tup_del, idx_scan, date_trunc(''minute'', last_autovacuum) from pg_stat_user_tables order by relname;'
+-- Show the approximate count of all tables. Relies on vacuum analyse.
+-- usage: :approx;
+\set approx 'select relname, n_live_tup, n_dead_tup, n_tup_ins, n_tup_del, idx_scan, date_trunc(''minute'', last_autovacuum) from pg_stat_user_tables order by relname'
 
--- Prints the columns in a table. Similar to \d <table> but without the noise
--- usage: :tables '<table>'
+-- Show all columns in a table. \d <table> without the noise
+-- usage: :tables 'table';
 \set columns 'select column_name from information_schema.columns where table_name ='
 
--- Prints all tables in the given schem. Similar to \dt but without the noise.
--- usage: :tables '<schema>'
+-- Show all tables in a schema. \dt without the noise
+-- usage: :tables 'schema';
 \set tables 'select table_name from information_schema.tables where table_schema = '
 
--- Prints all tables in the public schem. Similar to \dt but without the noise.
--- usage: :ptables
-\set ptables 'select table_name from information_schema.tables where table_schema = ''public'';'
+-- Show all tables in the public schema. \dt without the noise
+-- usage: :ptables;
+\set ptables 'select table_name from information_schema.tables where table_schema = ''public'''
+
+-- Print the size of all tables and any associated indexes. The index ratio is also shown.
+\set isize 'select nspname as namespace, relname as relation, pg_size_pretty(pg_relation_size(indrelid)) as table_size, pg_size_pretty(pg_relation_size(indexrelid)) as index_size, round(100 * pg_relation_size(indexrelid) / pg_relation_size(indrelid)) / 1000 as index_ratio from pg_index I left join pg_class C on (C.oid = I.indexrelid) left join pg_namespace N on (N.oid = C.relnamespace) where nspname not in (''pg_catalog'', ''information_schema'', ''pg_toast'') and C.relkind = ''i'' and pg_relation_size(indrelid) > 0 order by pg_relation_size(indexrelid) desc'
 
 -- vim: ft=sql
