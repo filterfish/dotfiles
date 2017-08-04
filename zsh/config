@@ -2,6 +2,11 @@ HISTFILE=~/.histfile
 HISTSIZE=5120
 SAVEHIST=4096
 
+# until I can find a terminal that supports bracketed paste
+# See http://cirw.in/blog/bracketed-paste
+
+unset zle_bracketed_paste
+
 setopt nocheckjobs
 
 setopt pushd_ignore_dups
