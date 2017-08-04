@@ -64,6 +64,9 @@ export LESS_TERMCAP_so=$(printf "\e[0;40;38m")
 export LESS_TERMCAP_ue=$(printf "\e[0m")
 export LESS_TERMCAP_us=$(printf "\e[4;36m")
 
+# Make sure pass copies to the primary selection not the fucking clipboard
+export PASSWORD_STORE_X_SELECTION=primary
+
 # collation = A-Za-z
 export LC_COLLATE=C
 
