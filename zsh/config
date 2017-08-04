@@ -22,7 +22,7 @@ setopt extended_history
 setopt list_types
 setopt no_bang_hist
 
-setopt auto_name_dirs
+# setopt auto_name_dirs
 
 setopt complete_in_word
 
