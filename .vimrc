@@ -3,7 +3,8 @@ let mapleader = ","
 
 set nocompatible
 
-if $KBD_LAYOUT == 'colemak'
+if $KBD_LAYOUT == 'colemak' || has("gui_running")
+
   noremap n j|noremap <C-w>n <C-w>j
   noremap e k|noremap <C-w>e <C-w>k
   noremap N J|noremap <C-w>N <C-w>J
@@ -54,27 +55,47 @@ NeoBundle 'Shougo/vimproc', {
 \   }
 \ }
 
+NeoBundle 'skywind3000/asyncrun.vim'
+
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'honza/vim-snippets'
+
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
+
+"Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" NeoBundle 'neovimhaskell/haskell-vim'
 
 NeoBundle 'vim-scripts/SQLUtilities'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'lambdatoast/elm.vim'
+NeoBundle 'JuliaEditorSupport/julia-vim'
+
+" NeoBundle 'sdiehl/haskell-vim-proto'
+
+NeoBundle 'cespare/vim-toml'
+NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'hashivim/vim-terraform'
+NeoBundle 'pearofducks/ansible-vim'
+NeoBundle 'tpope/vim-markdown'
+
+NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'alx741/ghc.vim'
+
+NeoBundle 'eagletmt/ghcmod-vim'
+
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
 
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'craigemery/vim-autotag'
 
 NeoBundle 'Kris2k/matchit'
 
 NeoBundle 'ctrlpvim/ctrlp.vim'
-
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-
-NeoBundle 'bling/vim-bufferline'
-
 
 NeoBundle 'noprompt/vim-yardoc'
 
@@ -83,21 +104,20 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-markdown'
 
 NeoBundle 'jamessan/vim-gnupg'
-NeoBundle 'cespare/vim-toml'
-NeoBundle 'rodjek/vim-puppet'
+
+NeoBundle 'godlygeek/tabular'
 
 NeoBundle 'mtth/scratch.vim'
 NeoBundle 'mbbill/undotree'
-NeoBundle 'edkolev/tmuxline.vim'
+" NeoBundle 'edkolev/tmuxline.vim'
 
 NeoBundle 'airblade/vim-gitgutter'
 
-NeoBundle 'scrooloose/syntastic'
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
 
-NeoBundle 'craigemery/vim-autotag'
+NeoBundle 'scrooloose/syntastic'
 
 " NeoBundle 'tpope/vim-fugitive.vim'
 " NeoBundle 'flazz/vim-colorschemes'
@@ -109,18 +129,51 @@ filetype plugin indent on
 " Prompt for uninstalled bundles found at startup
 NeoBundleCheck
 
-" set runtimepath+=/home/rgh/.vim/puppet
-
 " This is currently conflicting with ctrl-n (save)
 " set runtimepath+=/home/rgh/.vim/yankring
-
-source /home/rgh/.vim/udev.vim
-source /home/rgh/.vim/autotag.vim
 
 nnoremap <leader>s :%s/\s\+$//<cr>:let @/=''<cr>`'
 nnoremap <leader>w :set nowrap!<cr>
 nnoremap <leader>m :UndotreeToggle<cr>
-nnoremap <leader>r :set filetype=ruby<cr>
+nnoremap <leader>r :set filetype=haskell<cr>
+nnoremap <leader>c :set spell<cr>
+
+nnoremap <leader>. :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR>
+
+nnoremap <leader>f zf%<cr>
+
+let g:acp_enableAtStartup = 0
+
+" Perform zsh-like prompt expansion using the template {prompt}.  See
+" "EXPANSION OF PROMPT SEQUENCES" in zshmisc(1).
+" function s:ZshPromptExpn(prompt)
+"     return system("print -Pn " . shellescape(a:prompt))
+" endfunction
+
+" function s:MyTitle()
+"   return s:ZshPromptExpn("%m:%-3~ ") . v:progname . " " . fnamemodify(expand("%:f"), ":.")
+" endfunction
+
+" nmap <buffer> n   <Plug>(unite_loop_cursor_down)
+" nmap <buffer> k   <Plug>(unite_loop_cursor_up)
+
+" nmap n <Plug>(unite_loop_cursor_down)
+" nmap k <Plug>(unite_loop_cursor_up)
+
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplete#close_popup()
+inoremap <expr><C-e> neocomplete#cancel_popup()
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+inoremap <C-;> xP
+
+" nnoremap <C-p> :Unite file_rec/async<cr>
+nnoremap <C-p> :Unite file_rec<cr>
 
 syntax enable
 syntax sync fromstart
@@ -129,24 +182,31 @@ filetype on
 filetype plugin on
 filetype indent on
 
-map sb :se paste<cr>ggI#!/usr/bin/env ruby<cr># -*- encoding: utf-8 -*-<cr><cr><esc>`':se nopaste<cr>
-map us :se paste<cr>ggI# -*- encoding: utf-8 -*-<cr><esc>`':se nopaste<cr>
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+let g:markdown_fenced_languages = ['css', 'haskell', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
 highlight Pmenu ctermbg=238 gui=bold
 
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType md,markdown set wrap
+autocmd FileType md,markdown set linebreak
+autocmd FileType md,markdown set nolist  " list disables linebreak
+autocmd FileType md,markdown set textwidth=0
+autocmd FileType md,markdown set wrapmargin=0
+autocmd FileType md,markdown set formatoptions-=t
+autocmd FileType md,markdown set formatoptions+=l
 
-let g:solarized_termcolors=256
+
+" autocmd BufWritePre * :%s/\s\+$//e
+
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_termtrans=1
-
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+let g:solarized_termtrans=1
 
 let g:ctrlp_working_path_mode = 'cr'
 
@@ -163,8 +223,6 @@ let loaded_matchparen = 1
 
 " rails stuff.
 
-"set nocompatible  " We don't want vi compatibility.
-
 if $USER != 'root'
   set modeline
 else
@@ -176,30 +234,36 @@ set pastetoggle=<c-v>
 " default options
 set formatoptions=tcq
 
-" default comment symbol
+set list
+set listchars=trail:→,extends:»,nbsp:␣
+
+autocmd FileType make set listchars=tab:\ \ ,trail:→,extends:»,nbsp:␣
+
+autocmd BufWritePost package.yaml silent !hpack --silent
+
+" default comment string
 set commentstring=#\ %s
 
 " sql comment string
 autocmd FileType sql set commentstring=--\ %s
 
 set viminfo^=!
-set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+
+" Time to wait after ESC (default causes an annoying delay)
+set timeout timeoutlen=500 ttimeoutlen=10
 
 set autoindent
-
-set tags=tags;
-
-" For vim/ctags to recognise methods with a ?
-set iskeyword+=?
 
 " Visual
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 
+
 set expandtab
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
+
 set nonumber
 
 " See http://items.sjbach.com/319/configuring-vim-right for an
@@ -226,47 +290,13 @@ set nojoinspaces
 "nnoremap / q/a
 "nnoremap ? q?a
 
-" Set the title in screen.
-if $TERM=='screen' || $TERM=='screen-256color'
-    exe "set title titlestring=%f"
-    exe "set title t_ts=\<ESC>k t_fs=\<ESC>\\"
+if exists('$TMUX')
+  autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+else
+  autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 endif
 
-if has("gui_running")
-  set guioptions-=m  "remove menu bar
-  set guioptions-=T  "remove toolbar
-  set guioptions-=r  "remove right-hand scroll bar
-  set guioptions-=l
-  set guioptions-=R
-  set guioptions-=b
-
-  colorscheme slate
-endif
-
-"##########################################################################
-"#########################  Airline configuration  ########################
-"##########################################################################
-
-set laststatus=2
-let g:airline_right_sep = ''
-let g:airline_left_sep = ''
-
-
-let g:airline_theme = 'solarized'
-
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
-      \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '^V' : 'V',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '^S' : 'S',
-     \ }
+set title
 
 "##########################################################################
 "########################  Gitgutter configuration  #######################
@@ -285,26 +315,158 @@ nnoremap <leader>d :GitGutterSignsToggle<CR>
 
 
 "##########################################################################
-"########################  Gitgutter configuration  #######################
+"########################  Syntastic configuration  #######################
 "##########################################################################
+
+nnoremap <leader>a :SyntasticToggleMode<CR>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+autocmd FileType haskell let g:syntastic_always_populate_loc_list = 1
+autocmd FileType haskell let g:syntastic_auto_loc_list = 0
+autocmd FileType haskell let g:syntastic_check_on_open = 0
+autocmd FileType haskell let g:syntastic_check_on_wq = 0
 
-let g:syntastic_ruby_mri_exec = 'ruby'
+autocmd FileType ruby,eruby let g:syntastic_always_populate_loc_list = 1
+autocmd FileType ruby,eruby let g:syntastic_auto_loc_list = 1
+autocmd FileType ruby,eruby let g:syntastic_check_on_open = 1
+autocmd FileType ruby,eruby let g:syntastic_check_on_wq = 0
+
+autocmd FileType ruby,eruby let g:syntastic_ruby_mri_exec = 'ruby'
+
+if has("gui_running")
+  set guifont="Monospace 10"
+  set guifont=Iosevka\ Term\ Medium
+
+  " set background=dark
+  " colorscheme solarized
+
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=l
+  set guioptions-=R
+  set guioptions-=b
+endif
+
 
 "########################################################################
-"############################   vim-autotag  ############################
+"########################  Tabular configuration  #######################
 "########################################################################
 
-autocmd BufWritePost haskell let g:autotagCtagsCmd="fast-tags"
-autocmd BufWritePost elm let g:autotagCtagsCmd="ctags"
+let g:tabular_loaded = 1
+
+
+
+"########################################################################
+"########################  Supertab configuration  ######################
+"########################################################################
+
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+
+let g:haskellmode_completion_ghc = 1
+
+
+
+"########################################################################
+"#######################  neosnippet configuration  #####################
+"########################################################################
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+map <expr><TAB>
+\ pumvisible() ? "\<C-n>" :
+\ neosnippet#expandable_or_jumpable() ?
+\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For concealed markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+
+
+"########################################################################
+"########################  ghc-mod configuration  #######################
+"########################################################################
+
+" map <silent> tw :GhcModTypeInsert<CR>
+" map <silent> ts :GhcModSplitFunCase<CR>
+" map <silent> tq :GhcModType<CR>
+" map <silent> te :GhcModTypeClear<CR>
+
+autocmd FileType haskell nnoremap <leader>t :GhcModType<cr>
+autocmd FileType haskell nnoremap <leader>c :GhcModTypeClear<cr>
+
+autocmd FileType haskell nnoremap <silent><buffer> git :GhcModTypeInsert<CR>
+autocmd FileType haskell nnoremap <silent><buffer> gfs :GhcModSplitFunCase<CR>
+
+" autocmd FileType haskell nnoremap <silent><buffer> gtt :GhcModType<CR>
+" autocmd FileType haskell nnoremap <silent><buffer> gtc :GhcModType<CR>
+
+autocmd FileType haskell let g:necoghc_enable_detailed_browse = 1
+
+
+" let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+" let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+" let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+" let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+" let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+" let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+
+" let g:deoplete#enable_at_startup = 1
+
+
+"########################################################################
+"#######################   neco-ghc configuration   #####################
+"########################################################################
+
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+"########################################################################
+"#######################   ghc.vim configuration   ######################
+"########################################################################
+
+autocmd FileType haskell compiler ghc
+
+
+"########################################################################
+"#######################   general haskell stuff  #######################
+"########################################################################
+
+" Set up [[ and ]] so they jump to the next and pervious functions " respectively.
+
+function! JumpHaskellFunction(reverse)
+    call search('\C[[:alnum:]]*\s*::', a:reverse ? 'bW' : 'W')
+endfunction
+
+autocmd FileType haskell nnoremap <buffer><silent> ]] :call JumpHaskellFunction(0)<CR>
+autocmd FileType haskell nnoremap <buffer><silent> [[ :call JumpHaskellFunction(1)<CR>
+
+
+" Jump to the first import statement
+autocmd FileType haskell nnoremap <buffer> gI gg /\cimport<CR><ESC>:noh<CR>
+
+
+"########################################################################
+"###############################   ctags  ###############################
+"########################################################################
+
+" Finally, once and for all, sort out the auto-genreation of the ctags
+" file. That took a fucking lot of effort.
+
+autocmd BufWritePost *.hs call system("cd $(git root); fast-tags **/*.hs")
 
 set tags=tags;
 
