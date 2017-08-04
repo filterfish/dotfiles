@@ -45,7 +45,6 @@ export ENSCRIPT='--font=Courier7 --header-font=Helvetica8 --header=$N|%W'
 export INPUTRC=$HOME/.inputrc
 export LESSKEY=$HOME/.less
 export SCREENRC=$HOME/.screenrc
-export VIMINIT="source $HOME/.vimrc"
 
 export PS_FORMAT="pid,ppid,state,user,group,rss,c,cputime,cmd"
 
