@@ -20,7 +20,7 @@
   dss  = "!f() { n=${1:-0}; [ $(git stash list | wc -l) -gt 0 ] && git diff --stat stash@{$n}~1..stash@{$n}; }; f"
   st   = status
   stu  = status --untracked-files=no
-  sc   = stash
+  ss   = stash save
   sp   = stash pop
   co   = checkout
   root = !pwd
