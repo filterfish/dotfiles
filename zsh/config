@@ -60,9 +60,9 @@ export LESS_TERMCAP_mb=$(printf "\e[1;31m")
 export LESS_TERMCAP_md=$(printf "\e[0;37m")
 export LESS_TERMCAP_me=$(printf "\e[0m")
 export LESS_TERMCAP_se=$(printf "\e[0m")
-export LESS_TERMCAP_so=$(printf "\e[0;40;38m")
+export LESS_TERMCAP_so=$(printf "\e[0;20;34m")
 export LESS_TERMCAP_ue=$(printf "\e[0m")
-export LESS_TERMCAP_us=$(printf "\e[4;36m")
+export LESS_TERMCAP_us=$(printf "\e[2;36m")
 
 # Make sure pass copies to the primary selection not the fucking clipboard
 export PASSWORD_STORE_X_SELECTION=primary

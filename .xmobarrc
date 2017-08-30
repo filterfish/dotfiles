@@ -1,0 +1,32 @@
+Config { font = "-misc-fixed-*-*-*-*-12-*-*-*-*-*-*-*"
+       , additionalFonts = []
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "black"
+       , fgColor = "grey"
+       , alpha = 255
+       , position = TopW L 95
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Cpu ["-L", "3", "-H", "50", "--normal", "green", "--high", "red"] 10
+                    , Run Network "wlan0" ["-L","0","-H","32", "--normal","green","--high","red"] 10
+                    , Run Swap [] 10
+                    , Run Date "%d %b" "date" 10
+                    , Run DateZone "%H:%M" "en_AU.UTF-8" "Australia/Sydney" "date-aest" 10
+                    , Run DateZone "(%H:%M UTC)" "en_GB.UTF-8" "UTC" "date-utc" 10
+                    , Run Battery [ "-t", "<acstatus>: <left>%", "--", "-O", "AC", "-o", "Bat", "-H", "90", "-L", "10", "-h", "green", "-l", "red" ] 10
+                    , Run StdinReader
+         ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ <fc=#ee9a00>%date% %date-aest% %date-utc%</fc> | %cpu% | %battery% | %wlan0%"
+       }
+
+-- vim: set ft=haskell
